@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nocturne in Three Acts · Cupid Studio Archive 01</title>
+    <meta name="description" content="Complete anonymized anniversary keepsake edition crafted by Cupid Studio (McLanor Jeff).">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400..500;1,6..72,400..500&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="nocturne.css">
+    <script src="nocturne.js" defer></script>
+</head>
+<body>
+    <div class="grain-layer" aria-hidden="true"></div>
+
+    <!-- Top Studio Colophon Strip -->
+    <header class="archive-topbar">
+        <div class="archive-bar-inner">
+            <a href="../index.html#showcase" class="back-pill">&larr; Back to Cupid</a>
+            <span class="edition-tag">ARCHIVE EDITION 01 · ANONYMIZED WORK · NEVER REUSED</span>
+            <a href="../index.html?book=Anniversary&amp;tier=Full+Keepsake+Story" class="commission-pill">Commission Original</a>
+        </div>
+    </header>
+
+    <!-- Act I: Interactive Riddle Curtain -->
+    <section class="riddle-gate" id="riddleGate" aria-label="Private anniversary greeting gate">
+        <div class="gate-frame">
+            <span class="gate-eyebrow">ACT I · PRIVATE KEEPSAKE ENTRY</span>
+            <h1>Nocturne in Three Acts</h1>
+            <p class="gate-prompt">Before the keepsake opens: <em>Which lakeside town held our longest evening walk?</em></p>
+
+            <div class="gate-controls">
+                <input type="text" id="riddleInput" placeholder="Enter place name (hint: Akosombo)" autocomplete="off" spellcheck="false">
+                <button class="noc-btn noc-btn--gold" type="button" onclick="attemptGateUnlock()">Unlock Keepsake</button>
+            </div>
+            <div class="gate-assist">
+                <button class="ghost-link" type="button" onclick="fillAndUnlockGate()">Fill Hint &amp; Preview Entry</button>
+                <span class="gate-feedback" id="gateFeedback" aria-live="polite"></span>
+            </div>
+        </div>
+    </section>
+
+    <main class="nocturne-main">
+        <!-- Act II: Hero & Live Counter + Rotating Vinyl Soundtrack -->
+        <section class="noc-hero reveal-in">
+            <span class="sec-kicker">OCTOBER EIGHTEEN · FOUR YEARS SHARED</span>
+            <h2>For Efua, Across Every Quiet Evening</h2>
+            <p class="hero-note">
+                Built as a permanent dark room archive of two cities, late dinners, voice notes, and the soundtrack we never tire of playing.
+            </p>
+
+            <div class="live-clock" aria-label="Time elapsed together">
+                <div class="clock-unit">
+                    <strong id="cntDays">1,461</strong>
+                    <span>Days</span>
+                </div>
+                <div class="clock-unit">
+                    <strong id="cntHours">08</strong>
+                    <span>Hours</span>
+                </div>
+                <div class="clock-unit">
+                    <strong id="cntMins">42</strong>
+                    <span>Minutes</span>
+                </div>
+                <div class="clock-unit">
+                    <strong id="cntSecs">19</strong>
+                    <span>Seconds</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="vinyl-parlor reveal-in">
+            <div class="vinyl-desk">
+                <div class="turntable" id="turntable">
+                    <div class="platter-ring"></div>
+                    <div class="lp-disc" id="lpDisc">
+                        <div class="lp-grooves"></div>
+                        <div class="lp-label">
+                            <span>SIDE A</span>
+                            <strong>October Dusk</strong>
+                        </div>
+                    </div>
+                    <div class="tonearm" aria-hidden="true"></div>
+                </div>
+
+                <div class="track-notes">
+                    <span class="sec-kicker">ACT II · BESPOKE SOUNDTRACK</span>
+                    <h3>Press Play for the Evening Chords</h3>
+                    <p class="lyric-line" id="lyricLine">Tap spin to hear a warm electric piano progression composed directly in the browser.</p>
+
+                    <div class="player-row">
+                        <button class="noc-btn noc-btn--gold" id="vinylToggleBtn" type="button" onclick="toggleNocturneTrack()">Spin Vinyl &amp; Listen</button>
+                        <div class="eq-bars" id="eqBars" aria-hidden="true">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Act III: Interactive 3D Polaroid Keepsakes -->
+        <section class="polaroid-gallery reveal-in">
+            <div class="gallery-head">
+                <span class="sec-kicker">ACT III · FILM FRAMES &amp; REVERSE NOTES</span>
+                <h3>Tap Any Photograph to Turn It Over</h3>
+            </div>
+
+            <div class="polaroid-spread">
+                <button class="noc-polaroid tilt-left" type="button" onclick="this.classList.toggle('flipped')" aria-label="Flip first anniversary photo to read memory note">
+                    <div class="pol-inner">
+                        <div class="pol-face pol-front">
+                            <div class="pol-img-box">
+                                <img src="../assets/nocturne-couple.jpg" alt="Evening walk under warm streetlamps">
+                            </div>
+                            <div class="pol-cap">After the rain cleared · 19:40</div>
+                        </div>
+                        <div class="pol-face pol-back">
+                            <span class="back-stamp">FRAME NO. 07 · NOTE</span>
+                            <p class="handwriting">
+                                We missed the last turn before the bridge on purpose just so the walk would last another twenty minutes. I still remember how warm the streetlamps looked on your coat.
+                            </p>
+                            <span class="tap-return">Tap again to flip back</span>
+                        </div>
+                    </div>
+                </button>
+
+                <button class="noc-polaroid tilt-right" type="button" onclick="this.classList.toggle('flipped')" aria-label="Flip second candlelit dinner photo to read memory note">
+                    <div class="pol-inner">
+                        <div class="pol-face pol-front">
+                            <div class="pol-img-box">
+                                <img src="../assets/candle-dinner.jpg" alt="Candlelit dinner table with wax sealed envelope and film camera">
+                            </div>
+                            <div class="pol-cap">Table by the window · Third toast</div>
+                        </div>
+                        <div class="pol-face pol-back">
+                            <span class="back-stamp">FRAME NO. 14 · NOTE</span>
+                            <p class="handwriting">
+                                You forgot the film camera on the linen cloth while reaching for the letter. Every ordinary meal with you somehow ends up feeling worth framing.
+                            </p>
+                            <span class="tap-return">Tap again to flip back</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <!-- Act IV: Crimson Wax Seal Epilogue -->
+        <section class="epilogue-section reveal-in">
+            <span class="sec-kicker">ACT IV · EPILOGUE NOTE</span>
+            <h3>One Last Sealed Envelope</h3>
+
+            <div class="epilogue-stage" id="epilogueStage">
+                <div class="sealed-cover" id="sealedCover">
+                    <p class="envelope-addressee">To Efua · Opened at midnight</p>
+                    <button class="crimson-wax-btn" type="button" onclick="breakEpilogueSeal()">
+                        <span>Break Crimson Seal</span>
+                    </button>
+                </div>
+
+                <article class="unfolded-letter" id="unfoldedLetter" hidden>
+                    <p>My dear Efua,</p>
+                    <p>
+                        I wanted something that would stay long after status posts expire tomorrow. Every page here holds a night we actually walked, a melody that still makes the room quiet, and a promise that year five will be written with even more patience and laughter.
+                    </p>
+                    <p>
+                        Thank you for making ordinary Fridays feel monumental.
+                    </p>
+                    <p class="letter-sign">Always yours,<br><span>Kwesi</span></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Archive Notice & Link Back to Cupid -->
+        <footer class="archive-footer">
+            <div class="archive-note-card">
+                <span class="sec-kicker">BESPOKE ARCHIVE GUARANTEE</span>
+                <p>
+                    No client order ever copies this dark nocturne layout. Your commissioned build starts blank around your own story, music, photographs, and colors.
+                </p>
+                <div class="footer-actions">
+                    <a href="../index.html?book=Anniversary&amp;tier=Full+Keepsake+Story" class="noc-btn noc-btn--gold">Commission a Story Like This</a>
+                    <a href="../index.html#showcase" class="noc-btn noc-btn--outline">Return to Cupid Desk</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

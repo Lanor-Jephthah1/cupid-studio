@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okoto Garden Supper · Cupid Studio Archive 02</title>
+    <meta name="description" content="Complete anonymized function and evening dinner portal edition crafted by Cupid Studio (McLanor Jeff).">
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400..500;1,6..72,400..500&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="botanical-soiree.css">
+    <script src="botanical-soiree.js" defer></script>
+</head>
+<body>
+    <header class="archive-topbar">
+        <div class="archive-bar-inner">
+            <a href="../index.html#showcase" class="back-pill">&larr; Back to Cupid</a>
+            <span class="edition-tag">ARCHIVE EDITION 02 · FUNCTION PORTAL · DEMO NAMES ONLY</span>
+            <a href="../index.html?book=Function+%2F+Event&amp;tier=Function+or+Deluxe+Page" class="commission-pill">Commission Original</a>
+        </div>
+    </header>
+
+    <main class="bot-main">
+        <!-- Hero Crest & Real Botanical Stone Still Life -->
+        <section class="bot-hero">
+            <div class="bot-hero-copy">
+                <span class="bot-kicker">EVENING GATHERING &amp; THANKSGIVING DINNER</span>
+                <h1>The Okoto Garden Supper</h1>
+                <p class="bot-sub">
+                    Saturday · Aburi Conservatory Terrace · Dress: Earth &amp; Botanical Neutrals
+                </p>
+                <div class="bot-countdown" aria-label="Countdown to celebration">
+                    <div><strong id="bDays">14</strong><span>Days</span></div>
+                    <div><strong id="bHrs">06</strong><span>Hours</span></div>
+                    <div><strong id="bMins">28</strong><span>Mins</span></div>
+                    <div><strong id="bSecs">44</strong><span>Secs</span></div>
+                </div>
+            </div>
+            <div class="bot-photo-frame">
+                <img src="../assets/botanical-roses.jpg" alt="White garden roses bound with twine beside fountain pen on warm stone">
+                <span class="photo-caption">Botanical Terrace Setting · Conservatory Gate B</span>
+            </div>
+        </section>
+
+        <!-- Dress Swatches & Venue Gate -->
+        <section class="bot-two-col">
+            <div class="bot-card">
+                <span class="bot-kicker">01 · DRESS CODE ATELIER</span>
+                <h2>Requested Evening Palette</h2>
+                <p class="bot-muted">Tap a swatch below to inspect recommended fabrics and tones for photography harmony.</p>
+                <div class="swatch-row">
+                    <button class="swatch-btn active" type="button" onclick="selectBotSwatch('Cypress Pine', 'Deep green linen suits, tailored agbada, or matte satin gowns.', '#1B3429', this)">
+                        <span class="swatch-dot" style="background:#1B3429"></span>Cypress
+                    </button>
+                    <button class="swatch-btn" type="button" onclick="selectBotSwatch('Raw Ivory', 'Cream raw silk, woven cotton shirts, and understated ivory wraps.', '#EAE1D0', this)">
+                        <span class="swatch-dot" style="background:#EAE1D0"></span>Ivory Silk
+                    </button>
+                    <button class="swatch-btn" type="button" onclick="selectBotSwatch('Burnished Copper', 'Warm bronze accents, terracotta silk ties, and copper jewelry.', '#A86E42', this)">
+                        <span class="swatch-dot" style="background:#A86E42"></span>Copper
+                    </button>
+                    <button class="swatch-btn" type="button" onclick="selectBotSwatch('Stone Oat', 'Light travertine tailoring paired cleanly with warm suede footwear.', '#C8BCA7', this)">
+                        <span class="swatch-dot" style="background:#C8BCA7"></span>Stone Oat
+                    </button>
+                </div>
+                <div class="swatch-note" id="swatchNoteBox">
+                    <strong id="swatchTitle">Cypress Pine</strong>
+                    <span id="swatchDetail">Deep green linen suits, tailored agbada, or matte satin gowns.</span>
+                </div>
+            </div>
+
+            <div class="bot-card">
+                <span class="bot-kicker">02 · ARRIVAL &amp; DIRECTIONS</span>
+                <h2>Conservatory Terrace Logistics</h2>
+                <p class="bot-muted">Curated arrival notes keep guests off messy group chats before the dinner begins.</p>
+                <div class="venue-rows">
+                    <div class="v-row">
+                        <span>Venue Point</span>
+                        <strong>Botanical Ridge Lawn · Pavilion Two</strong>
+                    </div>
+                    <div class="v-row">
+                        <span>Gate Access</span>
+                        <strong>Gate B Conservatory Drive (Valet Ready)</strong>
+                    </div>
+                    <div class="v-row">
+                        <span>Doors Open</span>
+                        <strong>17:00 Sharp for Terrace Refreshments</strong>
+                    </div>
+                </div>
+                <button class="bot-btn bot-btn--outline" type="button" onclick="toggleVenueHint(this)">Show Arrival &amp; Parking Pin</button>
+                <p class="venue-pin-note" id="venuePinNote" hidden>
+                    Enter through Gate B beside the sandstone wall. Attendants match digital pass names directly from your phone screen.
+                </p>
+            </div>
+        </section>
+
+        <!-- Expandable Program Agenda -->
+        <section class="bot-card">
+            <span class="bot-kicker">03 · EVENING ORDER OF SERVICE</span>
+            <h2>From Sunset Cocktails to Courtyard Music</h2>
+            <div class="agenda-list">
+                <div class="agenda-row open">
+                    <button class="agenda-trigger" type="button" onclick="toggleAgendaRow(this)">
+                        <span><b>17:00</b> Terrace Welcome &amp; Chilled Hibiscus</span>
+                        <span>&#8722;</span>
+                    </button>
+                    <div class="agenda-detail">Acoustic trio greets arriving tables along the stone garden path while film portraits begin.</div>
+                </div>
+                <div class="agenda-row">
+                    <button class="agenda-trigger" type="button" onclick="toggleAgendaRow(this)">
+                        <span><b>18:30</b> Seated Candlelit Three Course Supper</span>
+                        <span>+</span>
+                    </button>
+                    <div class="agenda-detail">Shared coastal starters, charcoal sea bass or smoked jollof plates, and seasonal garden citrus dessert.</div>
+                </div>
+                <div class="agenda-row">
+                    <button class="agenda-trigger" type="button" onclick="toggleAgendaRow(this)">
+                        <span><b>20:15</b> Gratitude Toasts &amp; Keepsake Screening</span>
+                        <span>+</span>
+                    </button>
+                    <div class="agenda-detail">Short toast remarks from family followed by our private film projection beneath string lanterns.</div>
+                </div>
+                <div class="agenda-row">
+                    <button class="agenda-trigger" type="button" onclick="toggleAgendaRow(this)">
+                        <span><b>21:45</b> Courtyard Jazz &amp; Late Espresso Bar</span>
+                        <span>+</span>
+                    </button>
+                    <div class="agenda-detail">Open garden terrace dancing with decaf espresso, warm donuts, and framed take home prints.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Custom Dropdown RSVP + Minted Gate Pass PNG -->
+        <section class="bot-card bot-rsvp-card">
+            <div class="rsvp-grid">
+                <div>
+                    <span class="bot-kicker">04 · INTERACTIVE ENTRY PASS</span>
+                    <h2>Confirm Seat &amp; Mint Gate Ticket</h2>
+                    <p class="bot-muted">Type any sample guest name below and mint a custom entry card just like guests receive on event day.</p>
+
+                    <div class="bot-form">
+                        <div class="b-field">
+                            <label for="botGuestName">Guest Full Name</label>
+                            <input type="text" id="botGuestName" value="Nana Yaw Boateng" maxlength="40" spellcheck="false">
+                        </div>
+                        <div class="b-field-pair">
+                            <div class="b-field">
+                                <label>Party Size</label>
+                                <div class="bot-dd" id="botDdParty">
+                                    <button class="bot-dd-btn" type="button" onclick="toggleBotDd('botDdParty', event)">
+                                        <span class="bot-dd-label">2 Seats</span>
+                                        <span>&#9662;</span>
+                                    </button>
+                                    <div class="bot-dd-menu">
+                                        <button type="button" class="bot-dd-opt" onclick="pickBotDd('botDdParty', 'party', '1 Seat')">1 Seat</button>
+                                        <button type="button" class="bot-dd-opt selected" onclick="pickBotDd('botDdParty', 'party', '2 Seats')">2 Seats</button>
+                                        <button type="button" class="bot-dd-opt" onclick="pickBotDd('botDdParty', 'party', 'VIP Table (4)')">VIP Table (4)</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-field">
+                                <label>Main Plate</label>
+                                <div class="bot-dd" id="botDdMeal">
+                                    <button class="bot-dd-btn" type="button" onclick="toggleBotDd('botDdMeal', event)">
+                                        <span class="bot-dd-label">Charcoal Sea Bass</span>
+                                        <span>&#9662;</span>
+                                    </button>
+                                    <div class="bot-dd-menu">
+                                        <button type="button" class="bot-dd-opt selected" onclick="pickBotDd('botDdMeal', 'meal', 'Charcoal Sea Bass')">Charcoal Sea Bass</button>
+                                        <button type="button" class="bot-dd-opt" onclick="pickBotDd('botDdMeal', 'meal', 'Herb Roast Chicken')">Herb Roast Chicken</button>
+                                        <button type="button" class="bot-dd-opt" onclick="pickBotDd('botDdMeal', 'meal', 'Botanical Vegan')">Botanical Vegan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="bot-btn bot-btn--green" type="button" onclick="mintGatePass()">Mint Entry Gate Pass</button>
+                    </div>
+                </div>
+
+                <div class="pass-specimen-wrap">
+                    <div class="pass-ticket" id="passTicket">
+                        <div class="pass-head">
+                            <span>OKOTO GARDEN SUPPER</span>
+                            <strong id="passCode">PASS #0418</strong>
+                        </div>
+                        <div class="pass-body">
+                            <span class="pass-lbl">ADMITTED GUEST</span>
+                            <h3 id="passNameOut">Nana Yaw Boateng</h3>
+                            <div class="pass-meta" id="passMetaOut">2 SEATS · CHARCOAL SEA BASS · CYPRESS CODE</div>
+                        </div>
+                        <div class="pass-foot">
+                            <span>GATE B CONSERVATORY · 17:00 PROMPT</span>
+                            <button class="bot-link-btn" type="button" onclick="downloadBotPassPng()">Download Pass PNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bot-footer">
+            <span class="bot-kicker">BESPOKE ARCHIVE GUARANTEE</span>
+            <p>Every event portal ordered through Cupid receives its own custom color system, itinerary, maps, and RSVP workflow.</p>
+            <div class="bot-footer-actions">
+                <a href="../index.html?book=Function+%2F+Event&amp;tier=Function+or+Deluxe+Page" class="bot-btn bot-btn--green">Commission an Event Portal</a>
+                <a href="../index.html#showcase" class="bot-btn bot-btn--outline">Return to Cupid Desk</a>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>

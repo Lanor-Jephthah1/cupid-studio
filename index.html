@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupid · Digital Keepsake Cards &amp; Bespoke Celebration Websites</title>
+    <meta name="description" content="Bespoke interactive webpages and digital invitations by Cupid (McLanor Jeff · #thechucksdeveloper). Built cleanly for birthdays, anniversaries, functions, and Valentine's Day.">
+    <meta name="theme-color" content="#82172E">
+
+    <!-- Favicons & Social Link Preview -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Cupid Studio">
+    <meta property="og:url" content="https://cupid-studio.vercel.app/">
+    <meta property="og:title" content="Cupid · Digital Keepsakes &amp; Invitations by McLanor Jeff">
+    <meta property="og:description" content="Interactive celebratory websites, wax sealed love letters, and bespoke digital invitations crafted for birthdays, anniversaries, functions, and Valentine's Day.">
+    <meta property="og:image" content="https://cupid-studio.vercel.app/assets/preview.png">
+    <meta property="og:image:secure_url" content="https://cupid-studio.vercel.app/assets/preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cupid Studio editorial keepsake showcase card by McLanor Jeff">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cupid · Digital Keepsakes &amp; Invitations by McLanor Jeff">
+    <meta name="twitter:description" content="Bespoke interactive webpages for birthdays, anniversaries, functions, and Valentine's Day. Designed from scratch by McLanor Jeff.">
+    <meta name="twitter:image" content="https://cupid-studio.vercel.app/assets/preview.png">
+
+    <!-- Editorial Stationery Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Newsreader:ital,opsz,wght@0,6..72,400..500;1,6..72,400..500&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Sticky Compact Studio Navigation -->
+    <nav class="studio-nav" aria-label="Studio navigation">
+        <div class="studio-nav-inner">
+            <div class="nav-brand">
+                <strong>Cupid<span>.</span></strong>
+                <span>McLanor Jeff</span>
+            </div>
+            <div class="nav-links">
+                <a href="#cardSection" data-section="cardSection" class="active">Card</a>
+                <a href="#craft" data-section="craft">Studio</a>
+                <a href="#occasions" data-section="occasions">Samples</a>
+                <a href="#showcase" data-section="showcase">Archive</a>
+                <a href="#rates" data-section="rates">Rates</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page-wrap">
+        <!-- Studio Bar & Paper Finish Toggle -->
+        <div class="desk-bar">
+            <span>Digital Calling Card · <a href="#rates">Rates &amp; Inquiries</a></span>
+            <div class="stock-toggle" role="group" aria-label="Business card paper stock">
+                <button class="stock-opt active" type="button" onclick="setCardStock('ivory', this)">Ivory Cotton</button>
+                <button class="stock-opt" type="button" onclick="setCardStock('obsidian', this)">Obsidian Foil</button>
+            </div>
+        </div>
+
+        <!-- Tactile Calling Card -->
+        <section id="cardSection" aria-label="Cupid Business Card">
+            <div class="biz-card-stage" id="cardStage">
+                <div class="biz-card-tilt" id="cardTilt">
+                    <div class="biz-card-rotator" id="cardRotator">
+
+                        <!-- FRONT FACE -->
+                        <article class="card-face card-face--front" id="cardFrontFace" aria-hidden="false">
+                            <div class="card-sheen" aria-hidden="true"></div>
+                            <span class="corner-mark cm-tl" aria-hidden="true"></span>
+                            <span class="corner-mark cm-tr" aria-hidden="true"></span>
+                            <span class="corner-mark cm-bl" aria-hidden="true"></span>
+                            <span class="corner-mark cm-br" aria-hidden="true"></span>
+
+                            <div class="biz-card-inner">
+                                <div class="card-face-header">
+                                    <div class="card-mark">
+                                        <button class="monogram-stamp" type="button" onclick="playChime('stamp')" aria-label="Play Cupid chime">
+                                            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                                                <path class="draw-path" d="M14 23.2s-7.4-4.7-9.1-9.3c-1.2-3.4 1.1-6.9 4.5-6.9 2.2 0 3.7 1.3 4.6 3.1.9-1.8 2.4-3.1 4.6-3.1 3.4 0 5.7 3.5 4.5 6.9-1.7 4.6-9.1 9.3-9.1 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                                <path d="M5.5 21.5L22.5 5.5m0 0h-4m4 0v4" stroke="#9A7638" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                        <div class="studio-meta">
+                                            <strong>CUPID STUDIO · AKOSOMBO</strong>
+                                            Digital Keepsakes &amp; Private Invites
+                                        </div>
+                                    </div>
+                                    <button class="flip-btn" type="button" onclick="toggleCardFace()">
+                                        Contact &amp; QR <span class="flip-icon">&#8635;</span>
+                                    </button>
+                                </div>
+
+                                <div class="card-face-center">
+                                    <h1 class="cupid-wordmark">Cupid<span>.</span></h1>
+                                    <p class="card-lead">
+                                        Bespoke interactive webpages for the days people save: <em>birthdays, anniversaries, milestone functions, and Valentine's</em>.
+                                    </p>
+                                </div>
+
+                                <div class="card-face-footer">
+                                    <div class="founder-line">
+                                        Crafted by <strong>McLanor Jeff</strong> · <span>#thechucksdeveloper</span>
+                                    </div>
+                                    <div class="card-actions">
+                                        <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Commission a Page</button>
+                                        <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save Contact</button>
+                                        <button class="btn btn-outline" type="button" onclick="shareCard()">Share</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- BACK FACE -->
+                        <article class="card-face card-face--back" id="cardBackFace" aria-hidden="true">
+                            <div class="card-sheen" aria-hidden="true"></div>
+                            <span class="corner-mark cm-tl" aria-hidden="true"></span>
+                            <span class="corner-mark cm-tr" aria-hidden="true"></span>
+                            <span class="corner-mark cm-bl" aria-hidden="true"></span>
+                            <span class="corner-mark cm-br" aria-hidden="true"></span>
+
+                            <div class="biz-card-inner">
+                                <div class="card-face-header">
+                                    <div class="card-mark">
+                                        <button class="monogram-stamp" type="button" onclick="playChime('stamp')" aria-label="Play Cupid chime">
+                                            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                                                <path d="M14 23.2s-7.4-4.7-9.1-9.3c-1.2-3.4 1.1-6.9 4.5-6.9 2.2 0 3.7 1.3 4.6 3.1.9-1.8 2.4-3.1 4.6-3.1 3.4 0 5.7 3.5 4.5 6.9-1.7 4.6-9.1 9.3-9.1 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                                <path d="M5.5 21.5L22.5 5.5m0 0h-4m4 0v4" stroke="#9A7638" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                        <div class="studio-meta">
+                                            <strong>STUDIO DIRECTORY</strong>
+                                            Written &amp; Styled Individually
+                                        </div>
+                                    </div>
+                                    <button class="flip-btn" type="button" onclick="toggleCardFace()">
+                                        Front Card <span class="flip-icon">&#8635;</span>
+                                    </button>
+                                </div>
+
+                                <div class="back-body">
+                                    <div class="back-grid">
+                                        <div class="back-item">
+                                            <span>Founder &amp; Builder</span>
+                                            <strong>McLanor Jeff</strong>
+                                        </div>
+                                        <div class="back-item">
+                                            <span>X (Twitter)</span>
+                                            <a href="https://x.com/jeff_lanor" target="_blank" rel="noopener noreferrer">@jeff_lanor</a>
+                                        </div>
+                                        <div class="back-item back-item--wide">
+                                            <span>Direct Email</span>
+                                            <a href="mailto:mclanorjephthah@gmail.com">mclanorjephthah@gmail.com</a>
+                                        </div>
+                                        <div class="back-item">
+                                            <span>GitHub</span>
+                                            <a href="https://github.com/Lanor-Jephthah1" target="_blank" rel="noopener noreferrer">McLanorJEFF</a>
+                                        </div>
+                                        <div class="back-item">
+                                            <span>Turnaround</span>
+                                            <strong>2 to 5 Days</strong>
+                                        </div>
+                                        <div class="back-item back-item--wide">
+                                            <span>Studio Location</span>
+                                            <strong>Akosombo, Ghana · Worldwide</strong>
+                                        </div>
+                                    </div>
+
+                                    <div class="qr-panel">
+                                        <svg viewBox="0 0 39 39" shape-rendering="crispEdges" role="img" aria-label="QR code to email McLanor Jeff">
+                                            <rect width="39" height="39" fill="#FFFCF7"/>
+                                            <path fill="none" stroke="#1B1715" stroke-width="1" d="M1 1.5h7m1 0h2m1 0h1m3 0h1m1 0h1m1 0h2m1 0h2m1 0h1m2 0h1m1 0h7M1 2.5h1m5 0h1m1 0h2m6 0h4m2 0h4m4 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h2m5 0h2m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m3 0h5m2 0h1m3 0h1m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m3 0h1m1 0h1m6 0h1m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h1m2 0h2m5 0h1m1 0h2m4 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M14 8.5h2m2 0h2m3 0h2m1 0h3M1 9.5h1m2 0h7m1 0h1m2 0h2m5 0h2m1 0h3m2 0h1m2 0h1m1 0h3M3 10.5h1m1 0h2m1 0h1m5 0h2m1 0h1m1 0h1m5 0h1m1 0h3m2 0h2M1 11.5h1m1 0h1m2 0h2m3 0h1m1 0h1m2 0h3m1 0h3m1 0h1m2 0h6m4 0h1M6 12.5h1m2 0h4m4 0h2m1 0h2m2 0h2m6 0h4m1 0h1M1 13.5h3m3 0h2m4 0h5m7 0h1m2 0h2m1 0h2m1 0h1m1 0h2M2 14.5h2m1 0h1m6 0h3m2 0h1m1 0h1m1 0h2m1 0h1m2 0h3m3 0h1m1 0h1M1 15.5h1m1 0h1m2 0h2m1 0h2m5 0h1m2 0h3m3 0h2m1 0h3m4 0h3M1 16.5h1m3 0h2m1 0h4m1 0h3m6 0h2m1 0h1m2 0h3m1 0h1m1 0h2m1 0h1M1 17.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h3m1 0h1m1 0h1m2 0h1m2 0h4M4 18.5h1m3 0h1m1 0h3m1 0h1m3 0h1m3 0h2m2 0h1m1 0h3m1 0h1m1 0h3M1 19.5h1m1 0h1m3 0h2m1 0h2m1 0h3m1 0h1m1 0h2m1 0h7m3 0h1m1 0h2m1 0h1M1 20.5h3m2 0h1m5 0h1m1 0h1m1 0h2m1 0h3m1 0h7m1 0h3m2 0h2M3 21.5h1m2 0h2m3 0h3m1 0h1m2 0h1m1 0h1m4 0h1m1 0h2m1 0h5m1 0h1M3 22.5h2m1 0h1m1 0h3m3 0h7m2 0h1m2 0h1m1 0h1m3 0h3m1 0h1M1 23.5h1m4 0h2m1 0h1m1 0h2m1 0h3m5 0h1m1 0h3m1 0h3m3 0h1m2 0h1M1 24.5h1m2 0h1m1 0h1m1 0h3m1 0h2m1 0h1m3 0h3m2 0h2m2 0h1m4 0h3m1 0h1M1 25.5h1m1 0h2m1 0h4m5 0h2m1 0h1m2 0h3m5 0h1m1 0h3m3 0h1M1 26.5h2m2 0h1m2 0h1m2 0h1m1 0h1m4 0h3m1 0h3m1 0h1m1 0h2m3 0h2M1 27.5h3m2 0h4m1 0h2m1 0h3m1 0h2m2 0h1m3 0h4m1 0h2m2 0h3M1 28.5h1m1 0h3m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1M1 29.5h1m1 0h2m2 0h1m1 0h1m2 0h6m2 0h2m3 0h2m2 0h5m1 0h3M9 30.5h2m1 0h5m1 0h6m5 0h1m3 0h3M1 31.5h7m1 0h3m1 0h1m1 0h2m1 0h3m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M1 32.5h1m5 0h1m1 0h2m1 0h1m2 0h2m4 0h2m2 0h2m1 0h2m3 0h2m1 0h1M1 33.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h3m1 0h4m2 0h1m1 0h8m2 0h1M1 34.5h1m1 0h3m1 0h1m1 0h5m1 0h1m5 0h4m1 0h1m3 0h3m2 0h1m1 0h1M1 35.5h1m1 0h3m1 0h1m2 0h2m1 0h3m2 0h1m4 0h2m2 0h1m1 0h2m2 0h3m1 0h1M1 36.5h1m5 0h1m5 0h2m1 0h1m1 0h1m4 0h2m5 0h1m1 0h2m1 0h3M1 37.5h7m1 0h3m2 0h1m2 0h1m2 0h2m2 0h2m3 0h1m1 0h1m5 0h1"/>
+                                        </svg>
+                                        <div class="qr-caption">
+                                            Scan to Email
+                                            <strong>Studio Brief</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-face-footer">
+                                    <div class="founder-line">
+                                        WhatsApp dispatch unlocks cleanly once your brief form is completed.
+                                    </div>
+                                    <div class="card-actions">
+                                        <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Open Order Brief</button>
+                                        <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save vCard</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About & Studio Philosophy -->
+        <section class="section-block reveal" id="craft">
+            <div class="two-col-intro">
+                <div class="col-kicker">
+                    01 · The Studio
+                    <small>Private digital craftsmanship</small>
+                </div>
+                <div class="prose">
+                    <h2>Moments Worth Saving Deserve More Than a Status Post.</h2>
+                    <p>
+                        Social stories vanish after 24 hours. <strong>Cupid</strong> builds private, permanent keepsake websites with sealed letters, soundtrack playback, photo Polaroids, couple games, and digital invitations tailored to one occasion.
+                    </p>
+                    <p>
+                        Directed by <strong>McLanor Jeff</strong> (<strong>#thechucksdeveloper</strong>), every commission is coded individually so no two celebrations ever share the same layout, writing, or mood.
+                    </p>
+
+                    <div class="craft-proof-grid">
+                        <div class="craft-pill">
+                            <span class="pill-index">I.</span>
+                            <strong>Bespoke Builds</strong>
+                            <span>Every site is written from scratch for one story, never filled into a cloned template.</span>
+                        </div>
+                        <div class="craft-pill">
+                            <span class="pill-index">II.</span>
+                            <strong>Sound &amp; Tactility</strong>
+                            <span>Interactive envelopes, birthday candles, music discs, and warm paper animations.</span>
+                        </div>
+                        <div class="craft-pill">
+                            <span class="pill-index">III.</span>
+                            <strong>Phone First Fit</strong>
+                            <span>Tuned for effortless browsing on phones and clear presentation on any screen.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-grid">
+                <article class="process-step">
+                    <span>Step 01</span>
+                    <h4>Share Your Story</h4>
+                    <p>Send names, dates, photos, inside jokes, music links, or ceremony timings in a quick form.</p>
+                </article>
+                <article class="process-step">
+                    <span>Step 02</span>
+                    <h4>Private Staging</h4>
+                    <p>Review a private test link tailored to your theme and adjust wording or order before launch.</p>
+                </article>
+                <article class="process-step">
+                    <span>Step 03</span>
+                    <h4>Gift Ready Link</h4>
+                    <p>Deliver your finished keepsake URL or QR gift tag with optional secret passcode gating.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Multi-Chapter Interactive Occasion Desk -->
+        <section class="section-block reveal" id="occasions">
+            <div class="occasions-header">
+                <h2>Interactive Sample Desk</h2>
+                <span class="occasions-subnote">Try all 4 occasions &amp; 3 live chapters inside the preview frame.</span>
+            </div>
+
+            <div class="tab-strip" role="tablist" aria-label="Celebration categories">
+                <button class="occ-tab active" role="tab" aria-selected="true" type="button" onclick="selectOccasion('birthdays', this)">Birthdays</button>
+                <button class="occ-tab" role="tab" aria-selected="false" type="button" onclick="selectOccasion('anniversaries', this)">Anniversaries</button>
+                <button class="occ-tab" role="tab" aria-selected="false" type="button" onclick="selectOccasion('functions', this)">Functions</button>
+                <button class="occ-tab" role="tab" aria-selected="false" type="button" onclick="selectOccasion('valentines', this)">Valentine's</button>
+            </div>
+
+            <div class="occ-panel">
+                <div class="occ-copy" id="occCopyWrap">
+                    <span class="occ-eyebrow" id="occEyebrow">CUSTOM PAGE COMMISSION SAMPLE</span>
+                    <h3 id="occTitle">Birthday Keepsakes &amp; Surprise Tributes</h3>
+                    <p id="occDesc"></p>
+
+                    <details class="occ-spec-drawer">
+                        <summary>What goes into a full build</summary>
+                        <ul class="occ-bullets" id="occBullets"></ul>
+                    </details>
+
+                    <p class="occ-craft-disclaimer">
+                        Note: This preview is an abbreviated feature teaser. Full commissions are built deeper, custom written, and styled uniquely for your recipient.
+                    </p>
+
+                    <div class="occ-cta-row">
+                        <button class="btn btn-ink" id="occOrderBtn" type="button" onclick="openBookingModal('', 'Birthday')">Customize a Birthday Site</button>
+                    </div>
+                </div>
+
+                <div class="phone-stage">
+                    <div class="phone-shell">
+                        <div class="phone-screen">
+                            <div class="phone-topbar">
+                                <span id="phoneUrl">cupid.studio/ama24</span>
+                                <span class="phone-pill" id="phoneBadge">Feature Teaser</span>
+                            </div>
+                            <div class="phone-chapter-bar" id="phoneChapterBar"></div>
+                            <div class="phone-content" id="phoneContent"></div>
+                        </div>
+                    </div>
+                    <div class="phone-caption-bar">
+                        <span>Tap inside the frame above</span>
+                        <button class="expand-demo-btn" type="button" onclick="openFullDemo()">Expand Sample</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12-Second Unboxing Showcase & Complete Studio Archive Editions -->
+        <section class="section-block reveal" id="showcase">
+            <div class="showcase-head">
+                <div>
+                    <div class="craft-label">03 &middot; UNBOXING &amp; COMPLETE WORK</div>
+                    <h2>From Boxed Gift Tag to Finished Edition.</h2>
+                </div>
+                <p class="showcase-sub">
+                    Watch how a physical gift parcel hands off into a private keepsake, or open two anonymized complete builds with completely separate visual worlds.
+                </p>
+            </div>
+
+            <div class="showcase-grid">
+                <!-- Left: 12-Second Unboxing & Reveal Film -->
+                <div class="unboxing-card">
+                    <div class="unboxing-stage" id="unboxingStage" data-beat="0">
+                        <div class="unboxing-slate-bar">
+                            <span>CUPID DELIVERY REEL</span>
+                            <span id="unboxingSlateLabel">BEAT 01 &middot; PRINTED TAG PARCEL</span>
+                        </div>
+
+                        <!-- Beat 0: Physical Gift Box & Cotton Tag -->
+                        <div class="ub-scene ub-scene--box is-active" data-scene="0">
+                            <img class="ub-photo" src="assets/unboxing-flatlay.jpg" alt="Untied linen keepsake box beside dried roses and crimson wax sealed gift card">
+                            <div class="ub-scrim"></div>
+                            <div class="ub-focus-bracket ub-fb-tl" aria-hidden="true"></div>
+                            <div class="ub-focus-bracket ub-fb-tr" aria-hidden="true"></div>
+                            <div class="ub-focus-bracket ub-fb-bl" aria-hidden="true"></div>
+                            <div class="ub-focus-bracket ub-fb-br" aria-hidden="true"></div>
+                            <div class="ub-caption-card">
+                                <span>00:00 TO 03:00</span>
+                                <strong>Untied ribbon reveals a wax stamped QR keepsake tag</strong>
+                            </div>
+                        </div>
+
+                        <!-- Beat 1: QR Camera Scan & Obsidian Lock Screen -->
+                        <div class="ub-scene ub-scene--scan" data-scene="1">
+                            <img class="ub-photo ub-photo--blur" src="assets/unboxing-flatlay.jpg" alt="" aria-hidden="true">
+                            <div class="ub-scan-stage">
+                                <div class="ub-scan-tag">
+                                    <svg viewBox="0 0 39 39" shape-rendering="crispEdges" aria-hidden="true">
+                                        <rect width="39" height="39" fill="#FFFCF7"/>
+                                        <path fill="none" stroke="#1B1715" stroke-width="1" d="M1 1.5h7m1 0h1m2 0h2m2 0h1m2 0h2m2 0h1m1 0h5m1 0h7M1 2.5h1m5 0h1m2 0h3m1 0h3m2 0h1m1 0h1m1 0h1m2 0h2m3 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m3 0h1m3 0h1m2 0h7m4 0h1m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h2m3 0h4m1 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h3m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h2m1 0h2m2 0h3m2 0h3m1 0h2M1 9.5h1m3 0h1m1 0h5m1 0h4m2 0h2m2 0h1m1 0h1m4 0h5m2 0h1M4 10.5h1m4 0h1m2 0h1m1 0h1m2 0h1m2 0h3m4 0h1m1 0h1m1 0h1m1 0h1M2 11.5h1m3 0h2m2 0h2m1 0h1m3 0h1m1 0h1m1 0h3m4 0h3m1 0h4M1 12.5h1m3 0h2m1 0h2m5 0h1m2 0h1m3 0h2m1 0h1m1 0h4m4 0h1m1 0h1M2 13.5h1m3 0h4m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h4m4 0h3m2 0h1m1 0h1M1 14.5h2m1 0h1m1 0h1m1 0h3m2 0h2m1 0h1m1 0h1m5 0h1m1 0h4m1 0h3m2 0h1M1 15.5h1m4 0h2m1 0h3m1 0h4m2 0h1m1 0h9m1 0h1m1 0h1m1 0h1M1 16.5h1m4 0h1m3 0h1m2 0h1m1 0h3m2 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h1M2 17.5h3m2 0h1m1 0h1m2 0h1m1 0h4m2 0h2m2 0h1m5 0h3m2 0h3M3 18.5h2m1 0h1m3 0h2m1 0h1m5 0h2m1 0h2m1 0h1m1 0h2m4 0h1m1 0h1M1 19.5h2m1 0h8m3 0h2m1 0h3m1 0h11m2 0h1M4 20.5h1m1 0h1m4 0h2m1 0h5m1 0h3m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m1 0h1M2 21.5h1m1 0h4m2 0h1m6 0h2m2 0h3m1 0h1m5 0h2m2 0h1m1 0h1M3 22.5h1m1 0h2m3 0h2m2 0h4m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m2 0h5M1 23.5h7m2 0h1m3 0h1m1 0h3m5 0h5m1 0h1m1 0h1m1 0h1M3 24.5h1m2 0h1m1 0h2m3 0h2m2 0h3m3 0h1m1 0h1m2 0h2m2 0h1m1 0h2m1 0h1M3 25.5h7m9 0h2m2 0h3m1 0h1m1 0h5m1 0h1m1 0h1M1 26.5h2m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h3m3 0h4m3 0h2m1 0h2M3 27.5h1m3 0h3m2 0h1m1 0h1m2 0h3m1 0h1m5 0h2m1 0h1m3 0h2M3 28.5h3m2 0h2m2 0h3m3 0h2m2 0h2m1 0h1m1 0h1m2 0h1m2 0h3m1 0h1M1 29.5h5m1 0h1m1 0h1m2 0h3m1 0h1m1 0h1m1 0h6m1 0h7m1 0h2M9 30.5h3m1 0h1m1 0h5m1 0h1m2 0h1m2 0h1m1 0h1m3 0h1m3 0h1M1 31.5h7m1 0h1m1 0h2m3 0h2m1 0h1m2 0h4m3 0h1m1 0h1m1 0h3M1 32.5h1m5 0h1m2 0h4m1 0h3m2 0h3m4 0h1m1 0h1m3 0h1m1 0h2M1 33.5h1m1 0h3m1 0h1m1 0h3m2 0h2m1 0h1m3 0h1m3 0h1m1 0h1m1 0h5m1 0h1m1 0h1M1 34.5h1m1 0h3m1 0h1m3 0h2m2 0h1m3 0h2m2 0h1m1 0h4m1 0h3m3 0h1M1 35.5h1m1 0h3m1 0h1m2 0h2m3 0h2m1 0h3m3 0h1m5 0h3m1 0h3M1 36.5h1m5 0h1m2 0h4m2 0h3m1 0h3m2 0h1m2 0h1m2 0h2m1 0h3M1 37.5h7m1 0h1m1 0h1m1 0h1m4 0h2m1 0h2m1 0h1m3 0h1m6 0h3"/>
+                                    </svg>
+                                    <span class="ub-scan-beam" aria-hidden="true"></span>
+                                    <span class="ub-scan-pill">cupid.studio &middot; Opening</span>
+                                </div>
+                                <div class="ub-gate-chip">
+                                    <small>PRIVATE RIDDLE GATE</small>
+                                    <strong>A K O S O M B O</strong>
+                                    <span>Unlocked cleanly</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Beat 2: Obsidian Vinyl + Scattered 35mm Polaroids -->
+                        <div class="ub-scene ub-scene--vinyl" data-scene="2">
+                            <div class="ub-noc-frame">
+                                <div class="ub-noc-top">
+                                    <span>OCT 18 &middot; YEAR FOUR</span>
+                                    <span>1,461 DAYS</span>
+                                </div>
+                                <div class="ub-noc-body">
+                                    <div class="ub-disc-wrap">
+                                        <div class="ub-disc"><span>DUSK</span></div>
+                                        <small>Track 01 Playing</small>
+                                    </div>
+                                    <div class="ub-pol-stack">
+                                        <figure class="ub-pol ub-pol-a">
+                                            <img src="assets/nocturne-couple.jpg" alt="Evening twilight street walk photograph">
+                                            <figcaption>After the rain</figcaption>
+                                        </figure>
+                                        <figure class="ub-pol ub-pol-b">
+                                            <img src="assets/candle-dinner.jpg" alt="Candlelit dinner table photograph">
+                                            <figcaption>Table toast</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Beat 3: Sealed Letter Reveal & Final Slate -->
+                        <div class="ub-scene ub-scene--seal" data-scene="3">
+                            <div class="ub-letter-card">
+                                <div class="ub-seal-dot">SEAL OPENED</div>
+                                <p class="ub-letter-quote">
+                                    &ldquo;I wanted something you could keep long after status posts vanish tomorrow.&rdquo;
+                                </p>
+                                <div class="ub-letter-sign">Delivered ready in 2 to 5 days &middot; Always yours</div>
+                            </div>
+                        </div>
+
+                        <!-- Tactile Start / Play Overlay -->
+                        <button class="ub-play-overlay" id="ubPlayOverlay" type="button" onclick="toggleUnboxingPlay()" aria-label="Play 12 second unboxing showcase">
+                            <span class="ub-play-circle">&#9654;</span>
+                            <span class="ub-play-txt">Watch 12s Delivery Film</span>
+                        </button>
+                    </div>
+
+                    <div class="unboxing-controls">
+                        <div class="ub-scrubber" id="ubScrubber" role="slider" aria-label="Unboxing film timeline" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" tabindex="0">
+                            <div class="ub-scrubber-fill" id="ubScrubberFill"></div>
+                        </div>
+                        <div class="ub-ctrl-row">
+                            <div class="ub-ctrl-btns">
+                                <button class="btn btn-ink ub-btn-sm" id="ubPlayBtn" type="button" onclick="toggleUnboxingPlay()">Play 12s Film</button>
+                                <button class="btn btn-outline ub-btn-sm" id="ubMuteBtn" type="button" onclick="toggleUnboxingAudio()">Sound: Off</button>
+                            </div>
+                            <span class="ub-timecode" id="ubTimecode">00.0s / 12.0s</span>
+                        </div>
+                        <div class="ub-beats">
+                            <button class="ub-beat-btn active" type="button" onclick="seekUnboxingBeat(0)">01 Box</button>
+                            <button class="ub-beat-btn" type="button" onclick="seekUnboxingBeat(1)">02 Scan</button>
+                            <button class="ub-beat-btn" type="button" onclick="seekUnboxingBeat(2)">03 Vinyl</button>
+                            <button class="ub-beat-btn" type="button" onclick="seekUnboxingBeat(3)">04 Seal</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Option 1 Complete Archive Editions -->
+                <div class="archive-stack">
+                    <article class="archive-folio">
+                        <div class="folio-thumbs">
+                            <img src="assets/nocturne-couple.jpg" alt="Nocturne anniversary twilight walk preview">
+                            <img src="assets/candle-dinner.jpg" alt="Candlelit dinner wax sealed envelope preview">
+                        </div>
+                        <div class="folio-body">
+                            <span class="folio-kicker">EDITION 01 &middot; ANNIVERSARY KEEPSAKE</span>
+                            <h3>Nocturne in Three Acts</h3>
+                            <p>Dark obsidian charcoal atmosphere with a custom riddle gate, spinning synth vinyl track, 3D flip photo cards, and crimson epilogue seal.</p>
+                            <a href="archive/nocturne.html" class="folio-link">Open Complete Edition &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="archive-folio">
+                        <div class="folio-thumbs folio-thumbs--single">
+                            <img src="assets/botanical-roses.jpg" alt="Okoto Garden Supper travertine table and roses preview">
+                        </div>
+                        <div class="folio-body">
+                            <span class="folio-kicker">EDITION 02 &middot; FUNCTION &amp; DINNER PORTAL</span>
+                            <h3>The Okoto Garden Supper</h3>
+                            <p>Sunlit cypress linen portal featuring live countdown timer, tap fabric dress swatches, expandable agenda, and downloadable PNG guest pass.</p>
+                            <a href="archive/botanical-soiree.html" class="folio-link">Open Complete Edition &rarr;</a>
+                        </div>
+                    </article>
+
+                    <div class="archive-disclaimer">
+                        <strong>Never Reusable Templates:</strong> These archive builds show anonymized craft depth. Every new Cupid commission begins from scratch around your story and palette.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rates, Extras & Estimate Calculator -->
+        <section class="section-block reveal" id="rates">
+            <div class="ledger-head">
+                <h2>Studio Rates &amp; Estimate</h2>
+                <div class="curr-switch" role="group" aria-label="Switch currency">
+                    <button class="curr-opt active" type="button" onclick="setCurrency('GHS', this)">GHS (₵)</button>
+                    <button class="curr-opt" type="button" onclick="setCurrency('USD', this)">USD ($)</button>
+                </div>
+            </div>
+
+            <div class="rate-ledger">
+                <div class="rate-row" data-tier="Simple Note Page" onclick="selectTier('Simple Note Page')">
+                    <div class="rate-name">
+                        <strong>Simple Note Page</strong>
+                        <span>Quick surprises &amp; digital letters</span>
+                    </div>
+                    <p class="rate-desc">
+                        Single narrative page with bespoke styling, heartfelt letter reveal, audio pairing, and private hosting link.
+                    </p>
+                    <div class="rate-cta">
+                        <span class="rate-price" data-ghs="250" data-usd="25">₵250</span>
+                        <button class="btn btn-outline" type="button" onclick="event.stopPropagation(); openBookingModal('Simple Note Page')">Select</button>
+                    </div>
+                </div>
+
+                <div class="rate-row selected-tier" data-tier="Full Keepsake Story" onclick="selectTier('Full Keepsake Story')">
+                    <div class="rate-name">
+                        <strong>Full Keepsake Story</strong>
+                        <span>Most popular · Multi chapter tribute</span>
+                    </div>
+                    <p class="rate-desc">
+                        Multi section keepsake book with Polaroids, interactive chapters, couple trivia or wishes wall, and soundtrack playback.
+                    </p>
+                    <div class="rate-cta">
+                        <span class="rate-price" data-ghs="550" data-usd="50">₵550</span>
+                        <button class="btn btn-ink" type="button" onclick="event.stopPropagation(); openBookingModal('Full Keepsake Story')">Select</button>
+                    </div>
+                </div>
+
+                <div class="rate-row" data-tier="Function or Deluxe Page" onclick="selectTier('Function or Deluxe Page')">
+                    <div class="rate-name">
+                        <strong>Function or Deluxe Page</strong>
+                        <span>Events, ceremonies, dinners &amp; deluxe editions</span>
+                    </div>
+                    <p class="rate-desc">
+                        Complete invitation portal with live countdown, schedule agenda, venue map directions, dress code swatches, and RSVP gate pass.
+                    </p>
+                    <div class="rate-cta">
+                        <span class="rate-price" data-ghs="950" data-usd="90">₵950</span>
+                        <button class="btn btn-outline" type="button" onclick="event.stopPropagation(); openBookingModal('Function or Deluxe Page')">Select</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="extras-box">
+                <div class="extras-head">
+                    <h3>Optional Studio Addons</h3>
+                    <span>Tap to toggle extras in your estimate</span>
+                </div>
+
+                <div class="extras-grid">
+                    <div class="extra-item" data-id="rush" data-ghs="100" data-usd="10" onclick="toggleExtra(this)">
+                        <div class="extra-left">
+                            <span class="extra-check" aria-hidden="true">&#10003;</span>
+                            <div>
+                                <span class="extra-title">Express 24h Turnaround</span>
+                                <span class="extra-note">Priority same day or next day build for tight deadlines</span>
+                            </div>
+                        </div>
+                        <span class="extra-cost" data-ghs="+₵100" data-usd="+$10">+₵100</span>
+                    </div>
+
+                    <div class="extra-item" data-id="qrtag" data-ghs="40" data-usd="4" onclick="toggleExtra(this)">
+                        <div class="extra-left">
+                            <span class="extra-check" aria-hidden="true">&#10003;</span>
+                            <div>
+                                <span class="extra-title">Printable QR Gift Tag</span>
+                                <span class="extra-note">Print ready keepsake card PDF for gift boxes &amp; flowers</span>
+                                <button type="button" class="tag-preview-link" onclick="event.stopPropagation(); openTagModal()">Preview QR Tag</button>
+                            </div>
+                        </div>
+                        <span class="extra-cost" data-ghs="+₵40" data-usd="+$4">+₵40</span>
+                    </div>
+
+                    <div class="extra-item" data-id="pin" data-ghs="50" data-usd="5" onclick="toggleExtra(this)">
+                        <div class="extra-left">
+                            <span class="extra-check" aria-hidden="true">&#10003;</span>
+                            <div>
+                                <span class="extra-title">Private Passcode Lock</span>
+                                <span class="extra-note">Secret date, riddle, or PIN gate before opening the page</span>
+                            </div>
+                        </div>
+                        <span class="extra-cost" data-ghs="+₵50" data-usd="+$5">+₵50</span>
+                    </div>
+
+                    <div class="extra-item" data-id="wishes" data-ghs="80" data-usd="8" onclick="toggleExtra(this)">
+                        <div class="extra-left">
+                            <span class="extra-check" aria-hidden="true">&#10003;</span>
+                            <div>
+                                <span class="extra-title">Guestbook Wishes Wall</span>
+                                <span class="extra-note">Private link to gather notes from friends &amp; family</span>
+                            </div>
+                        </div>
+                        <span class="extra-cost" data-ghs="+₵80" data-usd="+$8">+₵80</span>
+                    </div>
+                </div>
+
+                <div class="estimate-bar">
+                    <div class="estimate-summary">
+                        Selected Estimate: <span id="estimateDesc">Full Keepsake Story (base rate)</span> <strong id="estimateTotal">₵550</strong>
+                    </div>
+                    <button class="btn btn-ink" type="button" onclick="openBookingModal(selectedTierName)">Lock Estimate &amp; Send Brief</button>
+                </div>
+            </div>
+
+            <div class="deposit-policy">
+                <strong>Booking Policy:</strong> Work begins after a <strong>50% studio deposit</strong> once your outline is confirmed, with balance settled prior to final link launch. Direct WhatsApp dispatch activates once your booking form is filled.
+            </div>
+        </section>
+
+        <footer class="colophon">
+            <span>CUPID · MCLANOR JEFF (#THECHUCKSDEVELOPER)</span>
+            <span>AKOSOMBO, GHANA · MCLANORJEPHTHAH@GMAIL.COM</span>
+        </footer>
+    </main>
+
+    <!-- Booking Modal -->
+    <div class="modal-backdrop" id="bookingModal" hidden role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+        <div class="modal-card modal-card--brief">
+            <button class="modal-close" type="button" aria-label="Close booking dialog" onclick="closeModal('bookingModal')">&times;</button>
+            <h3 id="bookingTitle">Commission Brief</h3>
+            <p class="sub">Fill in your celebration details below. Submitting unlocks direct WhatsApp or email dispatch.</p>
+
+            <div class="modal-estimate-strip">
+                <span id="modalEstimateDesc">Full Keepsake Story (base rate)</span>
+                <strong id="modalEstimateTotal">₵550</strong>
+            </div>
+
+            <div class="booking-form-scroll" id="bookingFormScroll">
+                <div class="booking-fields-grid">
+                    <div class="field">
+                        <label for="fName">Your Name *</label>
+                        <input id="fName" type="text" placeholder="e.g. Akwasi Mensah" autocomplete="name" spellcheck="false">
+                    </div>
+
+                    <div class="field">
+                        <label for="fDate">Target Launch Date *</label>
+                        <input id="fDate" type="text" placeholder="e.g. December 14" spellcheck="false">
+                    </div>
+
+                    <div class="field">
+                        <label for="ddOccasionBtn">Occasion</label>
+                        <div class="cupid-select" id="ddOccasion" data-target="fOccasion">
+                            <input type="hidden" id="fOccasion" value="Birthday">
+                            <button class="cupid-select-trigger" id="ddOccasionBtn" type="button" aria-haspopup="listbox" aria-expanded="false" onclick="toggleCupidDropdown('ddOccasion', event)">
+                                <span class="cupid-select-label">Birthday</span>
+                                <svg class="cupid-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <div class="cupid-select-menu" role="listbox">
+                                <button type="button" class="cupid-option selected" role="option" aria-selected="true" onclick="pickCupidOption('ddOccasion', 'Birthday')">Birthday</button>
+                                <button type="button" class="cupid-option" role="option" aria-selected="false" onclick="pickCupidOption('ddOccasion', 'Anniversary')">Anniversary</button>
+                                <button type="button" class="cupid-option" role="option" aria-selected="false" onclick="pickCupidOption('ddOccasion', 'Function / Event')">Function / Event</button>
+                                <button type="button" class="cupid-option" role="option" aria-selected="false" onclick="pickCupidOption('ddOccasion', &quot;Valentine's Day&quot;)">Valentine's Day</button>
+                                <button type="button" class="cupid-option" role="option" aria-selected="false" onclick="pickCupidOption('ddOccasion', 'Just Because')">Just Because</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="ddPackageBtn">Selected Tier</label>
+                        <div class="cupid-select" id="ddPackage" data-target="fPackage" data-callback="syncModalTier">
+                            <input type="hidden" id="fPackage" value="Full Keepsake Story">
+                            <button class="cupid-select-trigger" id="ddPackageBtn" type="button" aria-haspopup="listbox" aria-expanded="false" onclick="toggleCupidDropdown('ddPackage', event)">
+                                <span class="cupid-select-label">Full Keepsake Story</span>
+                                <svg class="cupid-chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <div class="cupid-select-menu" role="listbox">
+                                <button type="button" class="cupid-option" role="option" aria-selected="false" onclick="pickCupidOption('ddPackage', 'Simple Note Page')">Simple Note Page</button>
+                                <button type="button" class="cupid-option selected" role="option" aria-selected="true" onclick="pickCupidOption('ddPackage', 'Full Keepsake Story')">Full Keepsake Story</button>
+                                <button type="button" class="cupid-option" role="option" aria-selected="false" onclick="pickCupidOption('ddPackage', 'Function or Deluxe Page')">Function or Deluxe Page</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field field--full">
+                        <label for="fNotes">Story, Colors &amp; Song Notes *</label>
+                        <textarea id="fNotes" placeholder="Share recipient name, preferred palette, song link, photo count, or event details."></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-btns">
+                    <button class="btn btn-ink modal-btn-primary" type="button" onclick="sendWhatsApp()">Send Brief on WhatsApp</button>
+                    <button class="btn btn-outline" type="button" onclick="sendEmail()">Send via Email</button>
+                    <button class="btn btn-outline" type="button" onclick="copyBrief()">Copy Brief Text</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Printable QR Gift Tag Modal -->
+    <div class="modal-backdrop" id="tagModal" hidden role="dialog" aria-modal="true" aria-labelledby="tagTitle">
+        <div class="modal-card">
+            <button class="modal-close" type="button" aria-label="Close QR tag preview" onclick="closeModal('tagModal')">&times;</button>
+            <h3 id="tagTitle">Printable QR Gift Tag</h3>
+            <p class="sub">Prepared as a crisp cardstock ready PDF you can tie onto hampers, flowers, or dinner tables.</p>
+
+            <div class="gift-tag-specimen">
+                <div class="tag-hole" aria-hidden="true"></div>
+                <div class="tag-qr-wrap">
+                    <svg viewBox="0 0 39 39" shape-rendering="crispEdges" role="img" aria-label="Sample keepsake gift tag QR code">
+                        <rect width="39" height="39" fill="#FFFCF7"/>
+                        <path fill="none" stroke="#1B1715" stroke-width="1" d="M1 1.5h7m1 0h1m2 0h2m2 0h1m2 0h2m2 0h1m1 0h5m1 0h7M1 2.5h1m5 0h1m2 0h3m1 0h3m2 0h1m1 0h1m1 0h1m2 0h2m3 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m3 0h1m3 0h1m2 0h7m4 0h1m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h2m3 0h4m1 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h3m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h2m1 0h2m2 0h3m2 0h3m1 0h2M1 9.5h1m3 0h1m1 0h5m1 0h4m2 0h2m2 0h1m1 0h1m4 0h5m2 0h1M4 10.5h1m4 0h1m2 0h1m1 0h1m2 0h1m2 0h3m4 0h1m1 0h1m1 0h1m1 0h1M2 11.5h1m3 0h2m2 0h2m1 0h1m3 0h1m1 0h1m1 0h3m4 0h3m1 0h4M1 12.5h1m3 0h2m1 0h2m5 0h1m2 0h1m3 0h2m1 0h1m1 0h4m4 0h1m1 0h1M2 13.5h1m3 0h4m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h4m4 0h3m2 0h1m1 0h1M1 14.5h2m1 0h1m1 0h1m1 0h3m2 0h2m1 0h1m1 0h1m5 0h1m1 0h4m1 0h3m2 0h1M1 15.5h1m4 0h2m1 0h3m1 0h4m2 0h1m1 0h9m1 0h1m1 0h1m1 0h1M1 16.5h1m4 0h1m3 0h1m2 0h1m1 0h3m2 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h1M2 17.5h3m2 0h1m1 0h1m2 0h1m1 0h4m2 0h2m2 0h1m5 0h3m2 0h3M3 18.5h2m1 0h1m3 0h2m1 0h1m5 0h2m1 0h2m1 0h1m1 0h2m4 0h1m1 0h1M1 19.5h2m1 0h8m3 0h2m1 0h3m1 0h11m2 0h1M4 20.5h1m1 0h1m4 0h2m1 0h5m1 0h3m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m1 0h1M2 21.5h1m1 0h4m2 0h1m6 0h2m2 0h3m1 0h1m5 0h2m2 0h1m1 0h1M3 22.5h1m1 0h2m3 0h2m2 0h4m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m2 0h5M1 23.5h7m2 0h1m3 0h1m1 0h3m5 0h5m1 0h1m1 0h1m1 0h1M3 24.5h1m2 0h1m1 0h2m3 0h2m2 0h3m3 0h1m1 0h1m2 0h2m2 0h1m1 0h2m1 0h1M3 25.5h7m9 0h2m2 0h3m1 0h1m1 0h5m1 0h1m1 0h1M1 26.5h2m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h3m3 0h4m3 0h2m1 0h2M3 27.5h1m3 0h3m2 0h1m1 0h1m2 0h3m1 0h1m5 0h2m1 0h1m3 0h2M3 28.5h3m2 0h2m2 0h3m3 0h2m2 0h2m1 0h1m1 0h1m2 0h1m2 0h3m1 0h1M1 29.5h5m1 0h1m1 0h1m2 0h3m1 0h1m1 0h1m1 0h6m1 0h7m1 0h2M9 30.5h3m1 0h1m1 0h5m1 0h1m2 0h1m2 0h1m1 0h1m3 0h1m3 0h1M1 31.5h7m1 0h1m1 0h2m3 0h2m1 0h1m2 0h4m3 0h1m1 0h1m1 0h3M1 32.5h1m5 0h1m2 0h4m1 0h3m2 0h3m4 0h1m1 0h1m3 0h1m1 0h2M1 33.5h1m1 0h3m1 0h1m1 0h3m2 0h2m1 0h1m3 0h1m3 0h1m1 0h1m1 0h5m1 0h1m1 0h1M1 34.5h1m1 0h3m1 0h1m3 0h2m2 0h1m3 0h2m2 0h1m1 0h4m1 0h3m3 0h1M1 35.5h1m1 0h3m1 0h1m2 0h2m3 0h2m1 0h3m3 0h1m5 0h3m1 0h3M1 36.5h1m5 0h1m2 0h4m2 0h3m1 0h3m2 0h1m2 0h1m2 0h2m1 0h3M1 37.5h7m1 0h1m1 0h1m1 0h1m4 0h2m1 0h2m1 0h1m3 0h1m6 0h3"/>
+                    </svg>
+                </div>
+                <h4>Scan Me. I Made You Something.</h4>
+                <p>Crafted by Cupid · Private Keepsake Tag</p>
+            </div>
+
+            <button class="btn btn-ink" type="button" style="width:100%" onclick="closeModal('tagModal')">Close Specimen</button>
+        </div>
+    </div>
+
+    <!-- Expanded Interactive Demo Modal -->
+    <div class="modal-backdrop" id="fullDemoModal" hidden role="dialog" aria-modal="true" aria-labelledby="fullDemoHeading">
+        <div class="full-demo-card">
+            <button class="modal-close" type="button" aria-label="Close expanded sample" onclick="closeModal('fullDemoModal')">&times;</button>
+            <h3 id="fullDemoHeading">Interactive Sample</h3>
+
+            <div class="phone-shell">
+                <div class="phone-screen">
+                    <div class="phone-topbar">
+                        <span id="fullPhoneUrl">cupid.studio/ama24</span>
+                        <span class="phone-pill" id="fullPhoneBadge">Feature Teaser</span>
+                    </div>
+                    <div class="phone-chapter-bar" id="fullPhoneChapterBar"></div>
+                    <div class="phone-content" id="fullPhoneContent"></div>
+                </div>
+            </div>
+
+            <p class="full-demo-disclaimer">
+                Interactive mini sample displaying 3 starter modules. Every paid commission is custom coded around your photos, copy, and music.
+            </p>
+            <button class="btn btn-ink" id="fullDemoOrderBtn" type="button" style="width:100%">Customize a Site Like This</button>
+        </div>
+    </div>
+
+    <!-- Multi-Option Save Studio Card / vCard Modal -->
+    <div class="modal-backdrop" id="vcardModal" hidden role="dialog" aria-modal="true" aria-labelledby="vcardTitle">
+        <div class="modal-card modal-card--vcard">
+            <button class="modal-close" type="button" aria-label="Close save card options" onclick="closeModal('vcardModal')">&times;</button>
+            <h3 id="vcardTitle">Save Cupid Studio Card</h3>
+            <p class="sub">Pick whichever option suits your device to save McLanor Jeff straight into contacts or photos.</p>
+
+            <div class="vcard-qr-panel">
+                <div class="vcard-qr-box">
+                    <img src="assets/vcard-qr.svg" alt="Camera scannable vCard QR code for McLanor Jeff Cupid Studio">
+                </div>
+                <div class="vcard-qr-copy">
+                    <span class="vcard-kicker">CAMERA CONTACT IMPORT</span>
+                    <strong>Scan on Any Phone Camera</strong>
+                    <p>Point another iPhone or Android camera here to import the vCard straight into Contacts without downloading a file.</p>
+                </div>
+            </div>
+
+            <div class="vcard-options-grid">
+                <a class="btn btn-ink vcard-opt-btn" href="cupid.vcf" download="CupidStudio-McLanorJeff.vcf" onclick="downloadVCard(event)">Download .vcf File</a>
+                <button class="btn btn-outline vcard-opt-btn" type="button" onclick="shareVCardFile()">Share to Contacts / Files</button>
+                <button class="btn btn-outline vcard-opt-btn" type="button" onclick="downloadCardImage()">Save Card Image (.png)</button>
+                <button class="btn btn-outline vcard-opt-btn" type="button" onclick="copyContactDetails()">Copy Card Details</button>
+            </div>
+
+            <p class="vcard-note">
+                Tip: In iPhone Safari, tap browser Share then <strong>Add to Home Screen</strong> to pin Cupid like an app. Direct WhatsApp unlocks cleanly inside the order brief.
+            </p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
