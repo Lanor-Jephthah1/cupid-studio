@@ -420,3 +420,11 @@ body {
     .bot-countdown div:nth-child(2) { border-right: none; }
     .bot-countdown div:nth-child(1), .bot-countdown div:nth-child(2) { border-bottom: 1px solid var(--rule); }
 }
+
+/* Non-highlightable text across all browsers */
+html, body, body *:not(input):not(textarea) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -1454,3 +1454,93 @@ function showToast(msg) {
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove("show"), 3000);
 }
+
+// Fine-grain scroll-reactive particle formation
+(function initScrollGrainParticles() {
+    const canvas = document.getElementById('scrollGrainCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let w = 0, h = 0;
+    let lastScrollY = window.scrollY;
+    let scrollVelocity = 0;
+
+    const PARTICLE_COUNT = 68;
+    const particles = [];
+
+    function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push({
+            x: Math.random() * 1400,
+            y: Math.random() * 900,
+            vx: (Math.random() - 0.5) * 0.28,
+            vy: (Math.random() - 0.5) * 0.28,
+            r: 0.9 + Math.random() * 1.4,
+            alpha: 0.14 + Math.random() * 0.28,
+            gold: Math.random() > 0.45
+        });
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    window.addEventListener('scroll', () => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastScrollY;
+        scrollVelocity = Math.max(-14, Math.min(14, scrollVelocity + delta * 0.14));
+        lastScrollY = currentY;
+    }, { passive: true });
+
+    function tick() {
+        ctx.clearRect(0, 0, w, h);
+        scrollVelocity *= 0.92;
+        const scrollRatio = Math.min(1, window.scrollY / Math.max(1, document.documentElement.scrollHeight - h));
+
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            p.x += p.vx;
+            p.y += p.vy - scrollVelocity * 0.35;
+
+            if (p.x < 0) p.x = w;
+            if (p.x > w) p.x = 0;
+            if (p.y < 0) p.y = h;
+            if (p.y > h) p.y = 0;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = p.gold
+                ? `rgba(184, 134, 59, ${p.alpha})`
+                : `rgba(130, 23, 46, ${p.alpha * 0.85})`;
+            ctx.fill();
+
+            // Form subtle constellation threads as user scrolls down
+            if (scrollRatio > 0.03) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const q = particles[j];
+                    const dx = p.x - q.x;
+                    const dy = p.y - q.y;
+                    const dist = Math.hypot(dx, dy);
+                    if (dist < 95) {
+                        const lineAlpha = (1 - dist / 95) * (0.06 + scrollRatio * 0.09);
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(q.x, q.y);
+                        ctx.strokeStyle = `rgba(184, 134, 59, ${lineAlpha})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+        requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+})();
