@@ -132,3 +132,36 @@ function startEventCountdown() {
 }
 
 document.addEventListener("DOMContentLoaded", startEventCountdown);
+
+// One-Tap Calendar (.ics) Save-the-Date Export
+function downloadBotanicalIcs() {
+    const start = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000);
+    const pad = n => String(n).padStart(2, '0');
+    const fmt = d => `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}T170000Z`;
+    const fmtEnd = d => `${d.getUTCFullYear()}${pad(d.getUTCMonth() + 1)}${pad(d.getUTCDate())}T223000Z`;
+    const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Cupid Studio//Okoto Garden Supper//EN',
+        'BEGIN:VEVENT',
+        'UID:okoto-garden-supper@cupid.studio',
+        `DTSTAMP:${fmt(new Date())}`,
+        `DTSTART:${fmt(start)}`,
+        `DTEND:${fmtEnd(start)}`,
+        'SUMMARY:The Okoto Garden Supper',
+        'LOCATION:Aburi Conservatory Terrace · Gate B',
+        'DESCRIPTION:Evening Gathering & Thanksgiving Dinner. Dress: Earth & Botanical Neutrals.',
+        'END:VEVENT',
+        'END:VCALENDAR'
+    ].join('\r\n');
+
+    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'okoto-garden-supper.ics';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+}

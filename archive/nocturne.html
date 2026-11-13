@@ -146,6 +146,47 @@
             </div>
         </section>
 
+        <!-- Act III-B: Interactive Milestone Timeline & Wishes Wall -->
+        <section class="timeline-wishes reveal-in">
+            <div class="tw-grid">
+                <div class="tw-card">
+                    <span class="sec-kicker">MILESTONE TIMELINE · FOUR CHAPTERS</span>
+                    <h3>Tap a Year to Revisit</h3>
+                    <div class="milestone-tabs" role="tablist">
+                        <button class="ms-tab active" type="button" onclick="selectMilestone(0, this)">2022</button>
+                        <button class="ms-tab" type="button" onclick="selectMilestone(1, this)">2023</button>
+                        <button class="ms-tab" type="button" onclick="selectMilestone(2, this)">2024</button>
+                        <button class="ms-tab" type="button" onclick="selectMilestone(3, this)">2025</button>
+                    </div>
+                    <div class="milestone-stage" id="milestoneStage">
+                        <span class="ms-date" id="msDate">OCTOBER 18, 2022 · AKOSOMBO</span>
+                        <h4 id="msTitle">The Lakeside Rain Walk</h4>
+                        <p id="msNote">We missed the last turn before the bridge on purpose just so the evening would last twenty minutes longer.</p>
+                    </div>
+                </div>
+
+                <div class="tw-card">
+                    <span class="sec-kicker">GUESTBOOK WISHES WALL</span>
+                    <h3>Leave a Keepsake Note</h3>
+                    <div class="wishes-list" id="wishesList">
+                        <div class="wish-item">
+                            <p>"To four more years of late dinners and calm Fridays."</p>
+                            <span>— Ama &amp; Kojo</span>
+                        </div>
+                        <div class="wish-item">
+                            <p>"Still my favorite couple to third-wheel with."</p>
+                            <span>— Nana Yaa</span>
+                        </div>
+                    </div>
+                    <div class="wish-compose">
+                        <input type="text" id="wishAuthor" placeholder="Your name" maxlength="24" spellcheck="false">
+                        <input type="text" id="wishText" placeholder="Write a short wish..." maxlength="120">
+                        <button class="noc-btn noc-btn--gold" type="button" onclick="addNocturneWish()">Post Note</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Act IV: Crimson Wax Seal Epilogue -->
         <section class="epilogue-section reveal-in">
             <span class="sec-kicker">ACT IV · EPILOGUE NOTE</span>

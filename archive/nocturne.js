@@ -116,3 +116,60 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Milestone Timeline & Wishes Wall
+const NOCTURNE_MILESTONES = [
+    {
+        date: 'OCTOBER 18, 2022 · AKOSOMBO',
+        title: 'The Lakeside Rain Walk',
+        note: 'We missed the last turn before the bridge on purpose just so the evening would last twenty minutes longer.'
+    },
+    {
+        date: 'JUNE 04, 2023 · CAPE COAST',
+        title: 'Midnight Ocean & Film Camera',
+        note: 'Two rolls of 35mm film, cold sea breeze, and your laugh echoing across the empty courtyard.'
+    },
+    {
+        date: 'FEBRUARY 14, 2024 · ACCRA',
+        title: 'First Apartment Dinner',
+        note: 'Cardboard boxes still in the hallway, two candles on a crate, and the best jollof we ever made.'
+    },
+    {
+        date: 'OCTOBER 18, 2025 · YEAR FOUR',
+        title: 'Still Choosing Quiet Fridays',
+        note: 'Four years in, and ordinary evenings with you still feel like the main event.'
+    }
+];
+
+function selectMilestone(idx, btn) {
+    const item = NOCTURNE_MILESTONES[idx];
+    if (!item) return;
+    document.querySelectorAll('.ms-tab').forEach(t => t.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    document.getElementById('msDate').textContent = item.date;
+    document.getElementById('msTitle').textContent = item.title;
+    document.getElementById('msNote').textContent = item.note;
+}
+
+function addNocturneWish() {
+    const authorEl = document.getElementById('wishAuthor');
+    const textEl = document.getElementById('wishText');
+    const list = document.getElementById('wishesList');
+    const author = (authorEl.value || '').trim() || 'Guest';
+    const text = (textEl.value || '').trim();
+    if (!text) {
+        textEl.focus();
+        return;
+    }
+    const card = document.createElement('div');
+    card.className = 'wish-item';
+    const p = document.createElement('p');
+    p.textContent = `"${text}"`;
+    const span = document.createElement('span');
+    span.textContent = `— ${author}`;
+    card.appendChild(p);
+    card.appendChild(span);
+    list.prepend(card);
+    authorEl.value = '';
+    textEl.value = '';
+}
