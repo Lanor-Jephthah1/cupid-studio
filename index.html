@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cupid · Digital Keepsake Cards &amp; Bespoke Celebration Websites</title>
-    <meta name="description" content="Bespoke interactive webpages and digital invitations by Cupid (#thechucksdeveloper · #thechucksdeveloper). Built cleanly for birthdays, anniversaries, functions, and Valentine's Day.">
+    <title>Cupid Studio · Bespoke Digital Keepsakes &amp; Private Invitations</title>
+    <meta name="description" content="Personalised interactive celebration websites and private digital invitations by Cupid Studio (Jephthah Kwame Lanor · #thechucksdeveloper · Akosombo, Ghana). Built with care for birthdays, anniversaries, functions, and Valentine's Day.">
     <meta name="theme-color" content="#82172E">
 
     <!-- Favicons & Social Link Preview -->
@@ -12,18 +12,18 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Cupid Studio">
     <meta property="og:url" content="https://cupid-studio.vercel.app/">
-    <meta property="og:title" content="Cupid · Digital Keepsakes &amp; Invitations by #thechucksdeveloper">
-    <meta property="og:description" content="Interactive celebratory websites, wax sealed love letters, and bespoke digital invitations crafted for birthdays, anniversaries, functions, and Valentine's Day.">
+    <meta property="og:title" content="Cupid Studio · Digital Keepsakes &amp; Private Invitations">
+    <meta property="og:description" content="Personalised celebration websites, wax-sealed letters, and bespoke digital invitations crafted individually for birthdays, anniversaries, functions, and Valentine's Day. Directed by Jephthah Kwame Lanor (#thechucksdeveloper).">
     <meta property="og:image" content="https://cupid-studio.vercel.app/assets/preview.png">
     <meta property="og:image:secure_url" content="https://cupid-studio.vercel.app/assets/preview.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Cupid Studio editorial keepsake showcase card by #thechucksdeveloper">
+    <meta property="og:image:alt" content="Cupid Studio editorial keepsake showcase by Jephthah Kwame Lanor (#thechucksdeveloper)">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cupid · Digital Keepsakes &amp; Invitations by #thechucksdeveloper">
-    <meta name="twitter:description" content="Bespoke interactive webpages for birthdays, anniversaries, functions, and Valentine's Day. Designed from scratch by #thechucksdeveloper.">
+    <meta name="twitter:title" content="Cupid Studio · Digital Keepsakes &amp; Private Invitations">
+    <meta name="twitter:description" content="Bespoke interactive celebration websites for birthdays, anniversaries, functions, and Valentine's Day. Handcrafted by #thechucksdeveloper in Akosombo, Ghana.">
     <meta name="twitter:image" content="https://cupid-studio.vercel.app/assets/preview.png">
 
     <!-- Editorial Stationery Typography -->
@@ -38,237 +38,443 @@
     <canvas id="scrollGrainCanvas" aria-hidden="true"></canvas>
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-    <!-- Sticky Compact Studio Navigation -->
+    <!-- Sticky Editorial Studio Navigation -->
     <nav class="studio-nav" aria-label="Studio navigation">
         <div class="studio-nav-inner">
             <div class="nav-brand">
-                <strong>Cupid<span>.</span></strong>
-                <span>#thechucksdeveloper</span>
+                <a href="#hero" class="nav-brand-link">
+                    <strong>Cupid<span>.</span></strong>
+                    <span class="nav-origin">Akosombo, Ghana</span>
+                </a>
             </div>
             <div class="nav-links">
-                <a href="#cardSection" data-section="cardSection" class="active">Card</a>
-                <a href="#craft" data-section="craft">Studio</a>
-                <a href="#occasions" data-section="occasions">Samples</a>
+                <a href="#hero" data-section="hero" class="active">Atelier</a>
+                <a href="#craft" data-section="craft">Philosophy</a>
+                <a href="#repertoire" data-section="repertoire">Repertoire</a>
+                <a href="#occasions" data-section="occasions">Sample Desk</a>
                 <a href="#showcase" data-section="showcase">Archive</a>
                 <a href="#rates" data-section="rates">Rates</a>
+            </div>
+            <div class="nav-actions">
+                <div class="stock-toggle" role="group" aria-label="Business card paper stock finish">
+                    <button class="stock-opt active" type="button" onclick="setCardStock('ivory', this)">Ivory Cotton</button>
+                    <button class="stock-opt" type="button" onclick="setCardStock('obsidian', this)">Obsidian Foil</button>
+                </div>
+                <button class="btn btn-ink nav-commission-btn" type="button" onclick="openBookingModal('')">Commission</button>
             </div>
         </div>
     </nav>
 
     <main class="page-wrap">
-        <!-- Studio Bar & Paper Finish Toggle -->
-        <div class="desk-bar">
-            <span>Digital Calling Card · <a href="#rates">Rates &amp; Inquiries</a></span>
-            <div class="stock-toggle" role="group" aria-label="Business card paper stock">
-                <button class="stock-opt active" type="button" onclick="setCardStock('ivory', this)">Ivory Cotton</button>
-                <button class="stock-opt" type="button" onclick="setCardStock('obsidian', this)">Obsidian Foil</button>
-            </div>
-        </div>
+        <!-- Grand Editorial Hero & Tactile Atelier -->
+        <section class="hero-section" id="hero" aria-label="Cupid Studio Editorial Introduction">
+            <div class="hero-grid">
 
-        <!-- Tactile Calling Card -->
-        <section id="cardSection" aria-label="Cupid Business Card">
-            <div class="biz-card-stage" id="cardStage">
-                <div class="biz-card-tilt" id="cardTilt">
-                    <div class="biz-card-rotator" id="cardRotator">
+                <!-- Left Column: Editorial Voice & Manifesto Hook -->
+                <div class="hero-editorial">
+                    <span class="hero-kicker">STUDIO DOSSIER 01</span>
+                    <h1 class="hero-headline">
+                        Some moments deserve <br>
+                        <em>their own little world.</em>
+                    </h1>
+                    <p class="hero-lead">
+                        Personalised digital keepsakes and private invitations, thoughtfully designed around the people and moments that matter.
+                    </p>
 
-                        <!-- FRONT FACE -->
-                        <article class="card-face card-face--front" id="cardFrontFace" aria-hidden="false">
-                            <div class="card-sheen" aria-hidden="true"></div>
-                            <span class="corner-mark cm-tl" aria-hidden="true"></span>
-                            <span class="corner-mark cm-tr" aria-hidden="true"></span>
-                            <span class="corner-mark cm-bl" aria-hidden="true"></span>
-                            <span class="corner-mark cm-br" aria-hidden="true"></span>
+                    <div class="hero-narrative-box">
+                        <p>
+                            Important milestones deserve something more personal and enduring than a temporary social media post. Directed by <strong>#thechucksdeveloper</strong>, every Cupid commission is art-directed from scratch weaving wax-sealed letters, synchronized vinyl soundtracks, photo Polaroids, and private riddle gates into an interactive keepsake.
+                        </p>
+                        <div class="hero-meta-strip">
+                            <div class="hero-meta-item">
+                                <span class="meta-label">Delivery Format</span>
+                                <strong>Private Link &amp; QR Tag</strong>
+                            </div>
+                            <div class="hero-meta-item">
+                                <span class="meta-label">Studio Turnaround</span>
+                                <strong>2 to 5 Days</strong>
+                            </div>
+                            <div class="hero-meta-item">
+                                <span class="meta-label">Craftsmanship</span>
+                                <strong>Individually Coded</strong>
+                            </div>
+                        </div>
+                    </div>
 
-                            <div class="biz-card-inner">
-                                <div class="card-face-header">
-                                    <div class="card-mark">
-                                        <button class="monogram-stamp" type="button" onclick="playChime('stamp')" aria-label="Play Cupid chime">
-                                            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                                                <path class="draw-path" d="M14 23.2s-7.4-4.7-9.1-9.3c-1.2-3.4 1.1-6.9 4.5-6.9 2.2 0 3.7 1.3 4.6 3.1.9-1.8 2.4-3.1 4.6-3.1 3.4 0 5.7 3.5 4.5 6.9-1.7 4.6-9.1 9.3-9.1 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                                                <path d="M5.5 21.5L22.5 5.5m0 0h-4m4 0v4" stroke="#9A7638" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </button>
-                                        <div class="studio-meta">
-                                            <strong>CUPID STUDIO · AKOSOMBO</strong>
-                                            Digital Keepsakes &amp; Private Invites
-                                        </div>
-                                    </div>
-                                    <button class="flip-btn" type="button" onclick="toggleCardFace()">
-                                        Contact &amp; QR <span class="flip-icon">&#8635;</span>
-                                    </button>
-                                </div>
+                    <div class="hero-actions-row">
+                        <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Commission a Page</button>
+                        <a href="#occasions" class="btn btn-outline">Explore Sample Desk &darr;</a>
+                        <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save Contact</button>
+                    </div>
+                </div>
 
-                                <div class="card-face-center">
-                                    <h1 class="cupid-wordmark">Cupid<span>.</span></h1>
-                                    <p class="card-lead">
-                                        Bespoke interactive webpages for the days people save: <em>birthdays, anniversaries, milestone functions, and Valentine's</em>.
-                                    </p>
-                                </div>
+                <!-- Right Column: The Physical-to-Digital Atelier & Tactile Calling Card -->
+                <div class="hero-atelier">
+                    <div class="atelier-tableau">
+                        <div class="atelier-slate-bar">
+                            <span>THE TACTILE BRIDGE</span>
+                            <strong>PARCEL &rarr; DIGITAL KEEPSAKE</strong>
+                        </div>
 
-                                <div class="card-face-footer">
-                                    <div class="founder-line">
-                                        Crafted by <strong>#thechucksdeveloper</strong> · <span>#thechucksdeveloper</span>
-                                    </div>
-                                    <div class="card-actions">
-                                        <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Commission a Page</button>
-                                        <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save Contact</button>
-                                        <button class="btn btn-outline" type="button" onclick="shareCard()">Share</button>
+                        <div class="atelier-bridge-card">
+                            <div class="atelier-thumb-wrap">
+                                <img src="assets/unboxing-flatlay.jpg" alt="Untied ribbon, dried roses and wax-stamped gift card" class="atelier-thumb">
+                            </div>
+                            <div class="atelier-bridge-text">
+                                <span>HANDOFF SPECIFICATION</span>
+                                <strong>From Untied Box to Private URL</strong>
+                                <p>Boxed parcel hands off to an interactive digital world through a wax-stamped QR card or private text link.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tactile Calling Card (Preserved with all 3D tilt, flip, audio chime, and actions) -->
+                        <div id="cardSection" aria-label="Cupid Business Card">
+                            <div class="biz-card-stage" id="cardStage">
+                                <div class="biz-card-tilt" id="cardTilt">
+                                    <div class="biz-card-rotator" id="cardRotator">
+
+                                        <!-- FRONT FACE -->
+                                        <article class="card-face card-face--front" id="cardFrontFace" aria-hidden="false">
+                                            <div class="card-sheen" aria-hidden="true"></div>
+                                            <span class="corner-mark cm-tl" aria-hidden="true"></span>
+                                            <span class="corner-mark cm-tr" aria-hidden="true"></span>
+                                            <span class="corner-mark cm-bl" aria-hidden="true"></span>
+                                            <span class="corner-mark cm-br" aria-hidden="true"></span>
+
+                                            <div class="biz-card-inner">
+                                                <div class="card-face-header">
+                                                    <div class="card-mark">
+                                                        <button class="monogram-stamp" type="button" onclick="playChime('stamp')" aria-label="Play Cupid chime">
+                                                            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                                                                <path class="draw-path" d="M14 23.2s-7.4-4.7-9.1-9.3c-1.2-3.4 1.1-6.9 4.5-6.9 2.2 0 3.7 1.3 4.6 3.1.9-1.8 2.4-3.1 4.6-3.1 3.4 0 5.7 3.5 4.5 6.9-1.7 4.6-9.1 9.3-9.1 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                                                <path d="M5.5 21.5L22.5 5.5m0 0h-4m4 0v4" stroke="#9A7638" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="studio-meta">
+                                                            <strong>CUPID STUDIO · AKOSOMBO</strong>
+                                                            Digital Keepsakes &amp; Private Invites
+                                                        </div>
+                                                    </div>
+                                                    <button class="flip-btn" type="button" onclick="toggleCardFace()">
+                                                        Contact &amp; QR <span class="flip-icon">&#8635;</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="card-face-center">
+                                                    <h2 class="cupid-wordmark">Cupid<span>.</span></h2>
+                                                    <p class="card-lead">
+                                                        Bespoke interactive webpages for the days people save: <em>birthdays, anniversaries, milestone functions, and Valentine's</em>.
+                                                    </p>
+                                                </div>
+
+                                                <div class="card-face-footer">
+                                                    <div class="founder-line">
+                                                        Crafted by <strong>Jephthah Kwame Lanor</strong> · <span>#thechucksdeveloper</span>
+                                                    </div>
+                                                    <div class="card-actions">
+                                                        <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Commission</button>
+                                                        <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save Contact</button>
+                                                        <button class="btn btn-outline" type="button" onclick="shareCard()">Share</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                        <!-- BACK FACE -->
+                                        <article class="card-face card-face--back" id="cardBackFace" aria-hidden="true">
+                                            <div class="card-sheen" aria-hidden="true"></div>
+                                            <span class="corner-mark cm-tl" aria-hidden="true"></span>
+                                            <span class="corner-mark cm-tr" aria-hidden="true"></span>
+                                            <span class="corner-mark cm-bl" aria-hidden="true"></span>
+                                            <span class="corner-mark cm-br" aria-hidden="true"></span>
+
+                                            <div class="biz-card-inner">
+                                                <div class="card-face-header">
+                                                    <div class="card-mark">
+                                                        <button class="monogram-stamp" type="button" onclick="playChime('stamp')" aria-label="Play Cupid chime">
+                                                            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                                                                <path d="M14 23.2s-7.4-4.7-9.1-9.3c-1.2-3.4 1.1-6.9 4.5-6.9 2.2 0 3.7 1.3 4.6 3.1.9-1.8 2.4-3.1 4.6-3.1 3.4 0 5.7 3.5 4.5 6.9-1.7 4.6-9.1 9.3-9.1 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                                                <path d="M5.5 21.5L22.5 5.5m0 0h-4m4 0v4" stroke="#9A7638" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </button>
+                                                        <div class="studio-meta">
+                                                            <strong>STUDIO DIRECTORY</strong>
+                                                            Written &amp; Styled Individually
+                                                        </div>
+                                                    </div>
+                                                    <button class="flip-btn" type="button" onclick="toggleCardFace()">
+                                                        Front Card <span class="flip-icon">&#8635;</span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="back-body">
+                                                    <div class="back-grid">
+                                                        <div class="back-item">
+                                                            <span>Founder &amp; Builder</span>
+                                                            <strong>Jephthah Kwame Lanor</strong>
+                                                        </div>
+                                                        <div class="back-item">
+                                                            <span>X (Twitter)</span>
+                                                            <a href="https://x.com/jeff_lanor" target="_blank" rel="noopener noreferrer">@jeff_lanor</a>
+                                                        </div>
+                                                        <div class="back-item back-item--wide">
+                                                            <span>Direct Email</span>
+                                                            <a href="mailto:mclanorjephthah@gmail.com">mclanorjephthah@gmail.com</a>
+                                                        </div>
+                                                        <div class="back-item">
+                                                            <span>GitHub</span>
+                                                            <a href="https://github.com/Lanor-Jephthah1" target="_blank" rel="noopener noreferrer">Lanor-Jephthah1</a>
+                                                        </div>
+                                                        <div class="back-item">
+                                                            <span>Turnaround</span>
+                                                            <strong>2 to 5 Days</strong>
+                                                        </div>
+                                                        <div class="back-item back-item--wide">
+                                                            <span>Studio Location</span>
+                                                            <strong>Akosombo, Ghana · Worldwide</strong>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="qr-panel">
+                                                        <svg viewBox="0 0 39 39" shape-rendering="crispEdges" role="img" aria-label="QR code to email Jephthah Kwame Lanor">
+                                                            <rect width="39" height="39" fill="#FFFCF7"/>
+                                                            <path fill="none" stroke="#1B1715" stroke-width="1" d="M1 1.5h7m1 0h2m1 0h1m3 0h1m1 0h1m1 0h2m1 0h2m1 0h1m2 0h1m1 0h7M1 2.5h1m5 0h1m1 0h2m6 0h4m2 0h4m4 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h2m5 0h2m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m3 0h5m2 0h1m3 0h1m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m3 0h1m1 0h1m6 0h1m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h1m2 0h2m5 0h1m1 0h2m4 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M14 8.5h2m2 0h2m3 0h2m1 0h3M1 9.5h1m2 0h7m1 0h1m2 0h2m5 0h2m1 0h3m2 0h1m2 0h1m1 0h3M3 10.5h1m1 0h2m1 0h1m5 0h2m1 0h1m1 0h1m5 0h1m1 0h3m2 0h2M1 11.5h1m1 0h1m2 0h2m3 0h1m1 0h1m2 0h3m1 0h3m1 0h1m2 0h6m4 0h1M6 12.5h1m2 0h4m4 0h2m1 0h2m2 0h2m6 0h4m1 0h1M1 13.5h3m3 0h2m4 0h5m7 0h1m2 0h2m1 0h2m1 0h1m1 0h2M2 14.5h2m1 0h1m6 0h3m2 0h1m1 0h1m1 0h2m1 0h1m2 0h3m3 0h1m1 0h1M1 15.5h1m1 0h1m2 0h2m1 0h2m5 0h1m2 0h3m3 0h2m1 0h3m4 0h3M1 16.5h1m3 0h2m1 0h4m1 0h3m6 0h2m1 0h1m2 0h3m1 0h1m1 0h2m1 0h1M1 17.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h3m1 0h1m1 0h1m2 0h1m2 0h4M4 18.5h1m3 0h1m1 0h3m1 0h1m3 0h1m3 0h2m2 0h1m1 0h3m1 0h1m1 0h3M1 19.5h1m1 0h1m3 0h2m1 0h2m1 0h3m1 0h1m1 0h2m1 0h7m3 0h1m1 0h2m1 0h1M1 20.5h3m2 0h1m5 0h1m1 0h1m1 0h2m1 0h3m1 0h7m1 0h3m2 0h2M3 21.5h1m2 0h2m3 0h3m1 0h1m2 0h1m1 0h1m4 0h1m1 0h2m1 0h5m1 0h1M3 22.5h2m1 0h1m1 0h3m3 0h7m2 0h1m2 0h1m1 0h1m3 0h3m1 0h1M1 23.5h1m4 0h2m1 0h1m1 0h2m1 0h3m5 0h1m1 0h3m1 0h3m3 0h1m2 0h1M1 24.5h1m2 0h1m1 0h1m1 0h3m1 0h2m1 0h1m3 0h3m2 0h2m2 0h1m4 0h3m1 0h1M1 25.5h1m1 0h2m1 0h4m5 0h2m1 0h1m2 0h3m5 0h1m1 0h3m3 0h1M1 26.5h2m2 0h1m2 0h1m2 0h1m1 0h1m4 0h3m1 0h3m1 0h1m1 0h2m3 0h2M1 27.5h3m2 0h4m1 0h2m1 0h3m1 0h2m2 0h1m3 0h4m1 0h2m2 0h3M1 28.5h1m1 0h3m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1M1 29.5h1m1 0h2m2 0h1m1 0h1m2 0h6m2 0h2m3 0h2m2 0h5m1 0h3M9 30.5h2m1 0h5m1 0h6m5 0h1m3 0h3M1 31.5h7m1 0h3m1 0h1m1 0h2m1 0h3m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M1 32.5h1m5 0h1m1 0h2m1 0h1m2 0h2m4 0h2m2 0h2m1 0h2m3 0h2m1 0h1M1 33.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h3m1 0h4m2 0h1m1 0h8m2 0h1M1 34.5h1m1 0h3m1 0h1m1 0h5m1 0h1m5 0h4m1 0h1m3 0h3m2 0h1m1 0h1M1 35.5h1m1 0h3m1 0h1m2 0h2m1 0h3m2 0h1m4 0h2m2 0h1m1 0h2m2 0h3m1 0h1M1 36.5h1m5 0h1m5 0h2m1 0h1m1 0h1m4 0h2m5 0h1m1 0h2m1 0h3M1 37.5h7m1 0h3m2 0h1m2 0h1m2 0h2m2 0h2m3 0h1m1 0h1m5 0h1"/>
+                                                        </svg>
+                                                        <div class="qr-caption">
+                                                            Scan to Email
+                                                            <strong>Studio Brief</strong>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="card-face-footer">
+                                                    <div class="founder-line">
+                                                        WhatsApp dispatch unlocks cleanly once your brief form is completed.
+                                                    </div>
+                                                    <div class="card-actions">
+                                                        <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Open Brief</button>
+                                                        <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save vCard</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+
                                     </div>
                                 </div>
                             </div>
-                        </article>
-
-                        <!-- BACK FACE -->
-                        <article class="card-face card-face--back" id="cardBackFace" aria-hidden="true">
-                            <div class="card-sheen" aria-hidden="true"></div>
-                            <span class="corner-mark cm-tl" aria-hidden="true"></span>
-                            <span class="corner-mark cm-tr" aria-hidden="true"></span>
-                            <span class="corner-mark cm-bl" aria-hidden="true"></span>
-                            <span class="corner-mark cm-br" aria-hidden="true"></span>
-
-                            <div class="biz-card-inner">
-                                <div class="card-face-header">
-                                    <div class="card-mark">
-                                        <button class="monogram-stamp" type="button" onclick="playChime('stamp')" aria-label="Play Cupid chime">
-                                            <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
-                                                <path d="M14 23.2s-7.4-4.7-9.1-9.3c-1.2-3.4 1.1-6.9 4.5-6.9 2.2 0 3.7 1.3 4.6 3.1.9-1.8 2.4-3.1 4.6-3.1 3.4 0 5.7 3.5 4.5 6.9-1.7 4.6-9.1 9.3-9.1 9.3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                                                <path d="M5.5 21.5L22.5 5.5m0 0h-4m4 0v4" stroke="#9A7638" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </button>
-                                        <div class="studio-meta">
-                                            <strong>STUDIO DIRECTORY</strong>
-                                            Written &amp; Styled Individually
-                                        </div>
-                                    </div>
-                                    <button class="flip-btn" type="button" onclick="toggleCardFace()">
-                                        Front Card <span class="flip-icon">&#8635;</span>
-                                    </button>
-                                </div>
-
-                                <div class="back-body">
-                                    <div class="back-grid">
-                                        <div class="back-item">
-                                            <span>Founder &amp; Builder</span>
-                                            <strong>#thechucksdeveloper</strong>
-                                        </div>
-                                        <div class="back-item">
-                                            <span>X (Twitter)</span>
-                                            <a href="https://x.com/jeff_lanor" target="_blank" rel="noopener noreferrer">@jeff_lanor</a>
-                                        </div>
-                                        <div class="back-item back-item--wide">
-                                            <span>Direct Email</span>
-                                            <a href="mailto:mclanorjephthah@gmail.com">mclanorjephthah@gmail.com</a>
-                                        </div>
-                                        <div class="back-item">
-                                            <span>GitHub</span>
-                                            <a href="https://github.com/Lanor-Jephthah1" target="_blank" rel="noopener noreferrer">McLanorJEFF</a>
-                                        </div>
-                                        <div class="back-item">
-                                            <span>Turnaround</span>
-                                            <strong>2 to 5 Days</strong>
-                                        </div>
-                                        <div class="back-item back-item--wide">
-                                            <span>Studio Location</span>
-                                            <strong>Akosombo, Ghana · Worldwide</strong>
-                                        </div>
-                                    </div>
-
-                                    <div class="qr-panel">
-                                        <svg viewBox="0 0 39 39" shape-rendering="crispEdges" role="img" aria-label="QR code to email #thechucksdeveloper">
-                                            <rect width="39" height="39" fill="#FFFCF7"/>
-                                            <path fill="none" stroke="#1B1715" stroke-width="1" d="M1 1.5h7m1 0h2m1 0h1m3 0h1m1 0h1m1 0h2m1 0h2m1 0h1m2 0h1m1 0h7M1 2.5h1m5 0h1m1 0h2m6 0h4m2 0h4m4 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m1 0h2m5 0h2m2 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m3 0h5m2 0h1m3 0h1m1 0h3m2 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h2m3 0h1m1 0h1m6 0h1m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h1m2 0h2m5 0h1m1 0h2m4 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M14 8.5h2m2 0h2m3 0h2m1 0h3M1 9.5h1m2 0h7m1 0h1m2 0h2m5 0h2m1 0h3m2 0h1m2 0h1m1 0h3M3 10.5h1m1 0h2m1 0h1m5 0h2m1 0h1m1 0h1m5 0h1m1 0h3m2 0h2M1 11.5h1m1 0h1m2 0h2m3 0h1m1 0h1m2 0h3m1 0h3m1 0h1m2 0h6m4 0h1M6 12.5h1m2 0h4m4 0h2m1 0h2m2 0h2m6 0h4m1 0h1M1 13.5h3m3 0h2m4 0h5m7 0h1m2 0h2m1 0h2m1 0h1m1 0h2M2 14.5h2m1 0h1m6 0h3m2 0h1m1 0h1m1 0h2m1 0h1m2 0h3m3 0h1m1 0h1M1 15.5h1m1 0h1m2 0h2m1 0h2m5 0h1m2 0h3m3 0h2m1 0h3m4 0h3M1 16.5h1m3 0h2m1 0h4m1 0h3m6 0h2m1 0h1m2 0h3m1 0h1m1 0h2m1 0h1M1 17.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h3m1 0h1m1 0h1m2 0h1m2 0h4M4 18.5h1m3 0h1m1 0h3m1 0h1m3 0h1m3 0h2m2 0h1m1 0h3m1 0h1m1 0h3M1 19.5h1m1 0h1m3 0h2m1 0h2m1 0h3m1 0h1m1 0h2m1 0h7m3 0h1m1 0h2m1 0h1M1 20.5h3m2 0h1m5 0h1m1 0h1m1 0h2m1 0h3m1 0h7m1 0h3m2 0h2M3 21.5h1m2 0h2m3 0h3m1 0h1m2 0h1m1 0h1m4 0h1m1 0h2m1 0h5m1 0h1M3 22.5h2m1 0h1m1 0h3m3 0h7m2 0h1m2 0h1m1 0h1m3 0h3m1 0h1M1 23.5h1m4 0h2m1 0h1m1 0h2m1 0h3m5 0h1m1 0h3m1 0h3m3 0h1m2 0h1M1 24.5h1m2 0h1m1 0h1m1 0h3m1 0h2m1 0h1m3 0h3m2 0h2m2 0h1m4 0h3m1 0h1M1 25.5h1m1 0h2m1 0h4m5 0h2m1 0h1m2 0h3m5 0h1m1 0h3m3 0h1M1 26.5h2m2 0h1m2 0h1m2 0h1m1 0h1m4 0h3m1 0h3m1 0h1m1 0h2m3 0h2M1 27.5h3m2 0h4m1 0h2m1 0h3m1 0h2m2 0h1m3 0h4m1 0h2m2 0h3M1 28.5h1m1 0h3m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h2m1 0h1m1 0h1M1 29.5h1m1 0h2m2 0h1m1 0h1m2 0h6m2 0h2m3 0h2m2 0h5m1 0h3M9 30.5h2m1 0h5m1 0h6m5 0h1m3 0h3M1 31.5h7m1 0h3m1 0h1m1 0h2m1 0h3m3 0h1m1 0h2m1 0h1m1 0h1m1 0h3m1 0h1M1 32.5h1m5 0h1m1 0h2m1 0h1m2 0h2m4 0h2m2 0h2m1 0h2m3 0h2m1 0h1M1 33.5h1m1 0h3m1 0h1m1 0h1m1 0h1m3 0h3m1 0h4m2 0h1m1 0h8m2 0h1M1 34.5h1m1 0h3m1 0h1m1 0h5m1 0h1m5 0h4m1 0h1m3 0h3m2 0h1m1 0h1M1 35.5h1m1 0h3m1 0h1m2 0h2m1 0h3m2 0h1m4 0h2m2 0h1m1 0h2m2 0h3m1 0h1M1 36.5h1m5 0h1m5 0h2m1 0h1m1 0h1m4 0h2m5 0h1m1 0h2m1 0h3M1 37.5h7m1 0h3m2 0h1m2 0h1m2 0h2m2 0h2m3 0h1m1 0h1m5 0h1"/>
-                                        </svg>
-                                        <div class="qr-caption">
-                                            Scan to Email
-                                            <strong>Studio Brief</strong>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-face-footer">
-                                    <div class="founder-line">
-                                        WhatsApp dispatch unlocks cleanly once your brief form is completed.
-                                    </div>
-                                    <div class="card-actions">
-                                        <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Open Order Brief</button>
-                                        <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save vCard</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        </div>
 
                     </div>
                 </div>
+
             </div>
         </section>
 
-        <!-- About & Studio Philosophy -->
+        <!-- 01 · Studio Philosophy & Manifesto -->
         <section class="section-block reveal" id="craft">
-            <div class="two-col-intro">
-                <div class="col-kicker">
-                    01 · The Studio
-                    <small>Private digital craftsmanship</small>
-                </div>
-                <div class="prose">
-                    <h2>Moments Worth Saving Deserve More Than a Status Post.</h2>
-                    <p>
-                        Social stories vanish after 24 hours. <strong>Cupid</strong> builds private, permanent keepsake websites with sealed letters, soundtrack playback, photo Polaroids, couple games, and digital invitations tailored to one occasion.
-                    </p>
-                    <p>
-                        Directed by <strong>#thechucksdeveloper</strong> (<strong>#thechucksdeveloper</strong>), every commission is coded individually so no two celebrations ever share the same layout, writing, or mood.
-                    </p>
+            <div class="section-kicker-bar">
+                <span class="kicker-index">01</span>
+                <span class="kicker-label">Studio Philosophy</span>
+                <span class="kicker-rule"></span>
+                <span class="kicker-meta">Akosombo, Ghana · Worldwide</span>
+            </div>
 
-                    <div class="craft-proof-grid">
-                        <div class="craft-pill">
-                            <span class="pill-index">I.</span>
-                            <strong>Bespoke Builds</strong>
-                            <span>Every site is written from scratch for one story, never filled into a cloned template.</span>
-                        </div>
-                        <div class="craft-pill">
-                            <span class="pill-index">II.</span>
-                            <strong>Sound &amp; Tactility</strong>
-                            <span>Interactive envelopes, birthday candles, music discs, and warm paper animations.</span>
-                        </div>
-                        <div class="craft-pill">
-                            <span class="pill-index">III.</span>
-                            <strong>Phone First Fit</strong>
-                            <span>Tuned for effortless browsing on phones and clear presentation on any screen.</span>
-                        </div>
+            <div class="editorial-manifesto-grid">
+                <div class="manifesto-lead">
+                    <h2 class="manifesto-title">
+                        Moments Worth Saving Deserve More Than a <em>Status Post</em>.
+                    </h2>
+                    <div class="manifesto-attribution">
+                        <span class="attrib-founder">Jephthah Kwame Lanor</span>
+                        <span class="attrib-role">Founder, Designer &amp; Developer</span>
+                        <span class="attrib-tag">#thechucksdeveloper</span>
                     </div>
+                </div>
+
+                <div class="manifesto-body">
+                    <p class="manifesto-para-lead">
+                        Social stories vanish after 24 hours. A WhatsApp greeting is buried beneath incoming notifications by morning. We believe your most meaningful milestones deserve their own permanent, art-directed space.
+                    </p>
+                    <p>
+                        <strong>Cupid Studio</strong> designs private, bespoke digital keepsakes and invitations. Every commission is coded individually with interactive wax-sealed letters, synchronized soundtrack playback, 3D Polaroid memories, hidden riddle gates, and warm paper animations tailored to one specific story.
+                    </p>
+                    <p>
+                        No cloned templates. No disposable builders. We build digital heirlooms that recipients revisit long after the candles are blown out and the party music fades.
+                    </p>
                 </div>
             </div>
 
-            <div class="process-grid">
-                <article class="process-step">
-                    <span>Step 01</span>
-                    <h4>Share Your Story</h4>
-                    <p>Send names, dates, photos, inside jokes, music links, or ceremony timings in a quick form.</p>
+            <!-- 3 Studio Tenets -->
+            <div class="tenets-editorial-grid">
+                <article class="tenet-card">
+                    <div class="tenet-header">
+                        <span class="tenet-num">I</span>
+                        <span class="tenet-tag">Architecture</span>
+                    </div>
+                    <h3 class="tenet-name">Bespoke By Design</h3>
+                    <p class="tenet-desc">
+                        Every keepsake is hand-coded from scratch. Typography, spatial rhythm, palette, and chapter structure are art-directed specifically around your story, never poured into a cookie-cutter container.
+                    </p>
                 </article>
-                <article class="process-step">
-                    <span>Step 02</span>
-                    <h4>Private Staging</h4>
-                    <p>Review a private test link tailored to your theme and adjust wording or order before launch.</p>
+
+                <article class="tenet-card tenet-card--accent">
+                    <div class="tenet-header">
+                        <span class="tenet-num">II</span>
+                        <span class="tenet-tag">Sensory</span>
+                    </div>
+                    <h3 class="tenet-name">Tactile Intimacy</h3>
+                    <p class="tenet-desc">
+                        Physical stationery gestures brought to glass: wax seal medallions that break on touch, spinning vinyl discs with synchronized tracks, blowable birthday candles, and secret passcode gates.
+                    </p>
                 </article>
-                <article class="process-step">
-                    <span>Step 03</span>
-                    <h4>Gift Ready Link</h4>
-                    <p>Deliver your finished keepsake URL or QR gift tag with optional secret passcode gating.</p>
+
+                <article class="tenet-card">
+                    <div class="tenet-header">
+                        <span class="tenet-num">III</span>
+                        <span class="tenet-tag">Longevity</span>
+                    </div>
+                    <h3 class="tenet-name">Permanent &amp; Private</h3>
+                    <p class="tenet-desc">
+                        Hosted on a dedicated private link (e.g. <code>cupid.studio/ama24</code>) with optional passcode gating. Ad-free, private, and preserved indefinitely—with matching printable cardstock QR gift tags.
+                    </p>
                 </article>
             </div>
         </section>
 
-        <!-- Multi-Chapter Interactive Occasion Desk -->
+        <!-- 02 · What We Create (Studio Repertoire) -->
+        <section class="section-block reveal" id="repertoire">
+            <div class="section-kicker-bar">
+                <span class="kicker-index">02</span>
+                <span class="kicker-label">What We Create</span>
+                <span class="kicker-rule"></span>
+                <span class="kicker-meta">Three Dedicated Formats</span>
+            </div>
+
+            <div class="repertoire-header-grid">
+                <div class="repertoire-heading-wrap">
+                    <h2 class="repertoire-title">Three Art-Directed Keepsake Formats</h2>
+                </div>
+                <p class="repertoire-sub">
+                    We do not build ordinary websites. We design three specific forms of emotional digital experiences, calibrated for personal milestones, intimate surprises, and elevated celebrations.
+                </p>
+            </div>
+
+            <div class="repertoire-grid">
+                <!-- Repertoire 1: The Keepsake Story -->
+                <article class="repertoire-card repertoire-card--flagship">
+                    <div class="rep-card-top">
+                        <span class="rep-badge">FLAGSHIP · SIGNATURE EXPERIENCE</span>
+                        <span class="rep-format-id">01 / STORY</span>
+                    </div>
+                    <h3 class="rep-title">The Keepsake Story</h3>
+                    <p class="rep-role">Multi-chapter narrative journey celebrating enduring bonds.</p>
+                    <p class="rep-desc">
+                        Our signature commission: a chaptered digital world featuring a private riddle access gate, interactive 3D flip-card Polaroids, a milestone timeline, a guest wishes wall, and a synced vinyl soundtrack player.
+                    </p>
+                    <div class="rep-elements">
+                        <span class="rep-chip">Private Riddle Gate</span>
+                        <span class="rep-chip">3D Flip Polaroids</span>
+                        <span class="rep-chip">Vinyl Audio Player</span>
+                        <span class="rep-chip">Milestone Timeline</span>
+                        <span class="rep-chip">Wishes Wall</span>
+                    </div>
+                    <div class="rep-card-footer">
+                        <div class="rep-pricing-hint">From <strong>GH₵550</strong> · $50</div>
+                        <div class="rep-actions">
+                            <button class="btn btn-ink" type="button" onclick="jumpToOccasion('anniversaries')">Explore in Desk &rarr;</button>
+                            <button class="btn btn-outline" type="button" onclick="openBookingModal('Full Keepsake Story')">Commission</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Repertoire 2: The Sealed Letter -->
+                <article class="repertoire-card">
+                    <div class="rep-card-top">
+                        <span class="rep-badge">INTIMATE SURPRISE</span>
+                        <span class="rep-format-id">02 / LETTER</span>
+                    </div>
+                    <h3 class="rep-title">The Sealed Letter</h3>
+                    <p class="rep-role">Typewritten personal letter encased in an interactive wax envelope.</p>
+                    <p class="rep-desc">
+                        A single-page narrative keepsake designed for direct emotional impact. The recipient breaks an authentic digital wax seal to reveal your letter with paced typewriter reveals and ambient audio pairing.
+                    </p>
+                    <div class="rep-elements">
+                        <span class="rep-chip">Wax Seal Reveal</span>
+                        <span class="rep-chip">Typewriter Pacing</span>
+                        <span class="rep-chip">Ambient Soundtrack</span>
+                        <span class="rep-chip">Secret Postscript</span>
+                    </div>
+                    <div class="rep-card-footer">
+                        <div class="rep-pricing-hint">From <strong>GH₵250</strong> · $25</div>
+                        <div class="rep-actions">
+                            <button class="btn btn-outline" type="button" onclick="jumpToOccasion('valentines')">Explore in Desk &rarr;</button>
+                            <button class="btn btn-ink" type="button" onclick="openBookingModal('Simple Note Page')">Commission</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Repertoire 3: The Function Portal -->
+                <article class="repertoire-card">
+                    <div class="rep-card-top">
+                        <span class="rep-badge">PREMIUM EVENT PORTAL</span>
+                        <span class="rep-format-id">03 / PORTAL</span>
+                    </div>
+                    <h3 class="rep-title">The Function Portal</h3>
+                    <p class="rep-role">Bespoke digital invitation suite for private dinners &amp; milestones.</p>
+                    <p class="rep-desc">
+                        An art-directed guest portal that replaces ordinary PDFs or chat invites. Includes live countdowns, one-tap Calendar (.ics) integration, interactive dress code swatches, location GPS, and downloadable gate passes.
+                    </p>
+                    <div class="rep-elements">
+                        <span class="rep-chip">Live Countdown</span>
+                        <span class="rep-chip">1-Tap .ICS Calendar</span>
+                        <span class="rep-chip">Dress Code Swatches</span>
+                        <span class="rep-chip">Mintable Gate Pass</span>
+                    </div>
+                    <div class="rep-card-footer">
+                        <div class="rep-pricing-hint">From <strong>GH₵950</strong> · $90</div>
+                        <div class="rep-actions">
+                            <button class="btn btn-outline" type="button" onclick="jumpToOccasion('functions')">Explore in Desk &rarr;</button>
+                            <button class="btn btn-ink" type="button" onclick="openBookingModal('Function or Deluxe Page')">Commission</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 03 · Interactive Sample Desk -->
         <section class="section-block reveal" id="occasions">
+            <div class="section-kicker-bar">
+                <span class="kicker-index">03</span>
+                <span class="kicker-label">Interactive Sample Desk</span>
+                <span class="kicker-rule"></span>
+                <span class="kicker-meta">Live Interactive Simulator</span>
+            </div>
+
             <div class="occasions-header">
-                <h2>Interactive Sample Desk</h2>
-                <span class="occasions-subnote">Try all 4 occasions &amp; 3 live chapters inside the preview frame.</span>
+                <div>
+                    <h2 class="occasions-title">Hands-On Commission Simulator</h2>
+                    <p class="occasions-desc">
+                        Select a celebration category to test real interactive modules: candle lighting, riddle passcode gating, 3D Polaroid decks, vinyl audio, dress code swatches, and wax envelope unsealing.
+                    </p>
+                </div>
+                <div class="occasions-actions-top">
+                    <span class="occasions-subnote">4 Occasions · 12 Live Chapters</span>
+                </div>
             </div>
 
             <div class="tab-strip" role="tablist" aria-label="Celebration categories">
-                <button class="occ-tab active" role="tab" aria-selected="true" type="button" onclick="selectOccasion('birthdays', this)">Birthdays</button>
-                <button class="occ-tab" role="tab" aria-selected="false" type="button" onclick="selectOccasion('anniversaries', this)">Anniversaries</button>
-                <button class="occ-tab" role="tab" aria-selected="false" type="button" onclick="selectOccasion('functions', this)">Functions</button>
-                <button class="occ-tab" role="tab" aria-selected="false" type="button" onclick="selectOccasion('valentines', this)">Valentine's</button>
+                <button class="occ-tab active" data-occ="birthdays" role="tab" aria-selected="true" type="button" onclick="selectOccasion('birthdays', this)">
+                    <span class="tab-num">01</span> Birthdays &amp; Tributes
+                </button>
+                <button class="occ-tab" data-occ="anniversaries" role="tab" aria-selected="false" type="button" onclick="selectOccasion('anniversaries', this)">
+                    <span class="tab-num">02</span> Anniversaries
+                </button>
+                <button class="occ-tab" data-occ="functions" role="tab" aria-selected="false" type="button" onclick="selectOccasion('functions', this)">
+                    <span class="tab-num">03</span> Functions &amp; Dinners
+                </button>
+                <button class="occ-tab" data-occ="valentines" role="tab" aria-selected="false" type="button" onclick="selectOccasion('valentines', this)">
+                    <span class="tab-num">04</span> Valentine's &amp; Letters
+                </button>
             </div>
 
             <div class="occ-panel">
@@ -282,12 +488,13 @@
                         <ul class="occ-bullets" id="occBullets"></ul>
                     </details>
 
-                    <p class="occ-craft-disclaimer">
-                        Note: This preview is an abbreviated feature teaser. Full commissions are built deeper, custom written, and styled uniquely for your recipient.
-                    </p>
+                    <div class="occ-craft-disclaimer">
+                        <strong>Studio Note:</strong> This preview is an abbreviated feature teaser. Paid commissions are coded deeper, custom written, and styled uniquely for your recipient.
+                    </div>
 
                     <div class="occ-cta-row">
                         <button class="btn btn-ink" id="occOrderBtn" type="button" onclick="openBookingModal('', 'Birthday')">Customize a Birthday Site</button>
+                        <button class="btn btn-outline" type="button" onclick="openFullDemo()">Open Expanded Demo</button>
                     </div>
                 </div>
 
@@ -303,110 +510,125 @@
                         </div>
                     </div>
                     <div class="phone-caption-bar">
-                        <span>Tap inside the frame above</span>
+                        <span>Interactive · Tap &amp; interact inside frame</span>
                         <button class="expand-demo-btn" type="button" onclick="openFullDemo()">Expand Sample</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 12-Second Unboxing Showcase & Complete Studio Archive Editions -->
+        <!-- 04 · 12-Second Delivery Experience & Selected Complete Studio Archive Editions -->
         <section class="section-block reveal" id="showcase">
+            <div class="section-kicker-bar">
+                <span class="kicker-index">04</span>
+                <span class="kicker-label">Delivery &amp; Complete Archive</span>
+                <span class="kicker-rule"></span>
+                <span class="kicker-meta">12s Delivery Reel · 2 Complete Editions</span>
+            </div>
+
             <div class="showcase-head">
                 <div>
-                    <div class="craft-label">03 &middot; UNBOXING &amp; COMPLETE WORK</div>
-                    <h2>From Boxed Gift Tag to Finished Edition.</h2>
+                    <h2>From Boxed Gift Tag to Finished Digital World.</h2>
                 </div>
                 <p class="showcase-sub">
-                    Watch how a physical gift parcel hands off into a private keepsake, or open two anonymized complete builds with completely separate visual worlds.
+                    Watch how a physical gift parcel hands off into a private keepsake, then step inside two complete, anonymized studio editions with distinct visual worlds.
                 </p>
             </div>
 
-            <div class="showcase-grid">
-                <!-- Left: 12-Second Unboxing & Reveal Film -->
-                <div class="unboxing-card">
-                    <div class="unboxing-stage" id="unboxingStage" data-beat="0">
-                        <div class="unboxing-slate-bar">
-                            <span>CUPID DELIVERY REEL</span>
-                            <span id="unboxingSlateLabel">BEAT 01 &middot; PRINTED TAG PARCEL</span>
-                        </div>
+            <!-- Part A: Horizontal Delivery Experience (Film Stage + Director Console) -->
+            <div class="delivery-editorial-stage">
+                <div class="unboxing-stage" id="unboxingStage" data-beat="0">
+                    <div class="unboxing-slate-bar">
+                        <span>CUPID DELIVERY REEL</span>
+                        <span id="unboxingSlateLabel">BEAT 01 &middot; PRINTED TAG PARCEL</span>
+                    </div>
 
-                        <!-- Beat 0: Physical Gift Box & Cotton Tag -->
-                        <div class="ub-scene ub-scene--box is-active" data-scene="0">
-                            <img class="ub-photo" src="assets/unboxing-flatlay.jpg" alt="Untied linen keepsake box beside dried roses and crimson wax sealed gift card">
-                            <div class="ub-scrim"></div>
-                            <div class="ub-focus-bracket ub-fb-tl" aria-hidden="true"></div>
-                            <div class="ub-focus-bracket ub-fb-tr" aria-hidden="true"></div>
-                            <div class="ub-focus-bracket ub-fb-bl" aria-hidden="true"></div>
-                            <div class="ub-focus-bracket ub-fb-br" aria-hidden="true"></div>
-                            <div class="ub-caption-card">
-                                <span>00:00 TO 03:00</span>
-                                <strong>Untied ribbon reveals a wax stamped QR keepsake tag</strong>
+                    <!-- Beat 0: Physical Gift Box & Cotton Tag -->
+                    <div class="ub-scene ub-scene--box is-active" data-scene="0">
+                        <img class="ub-photo" src="assets/unboxing-flatlay.jpg" alt="Untied linen keepsake box beside dried roses and crimson wax sealed gift card">
+                        <div class="ub-scrim"></div>
+                        <div class="ub-focus-bracket ub-fb-tl" aria-hidden="true"></div>
+                        <div class="ub-focus-bracket ub-fb-tr" aria-hidden="true"></div>
+                        <div class="ub-focus-bracket ub-fb-bl" aria-hidden="true"></div>
+                        <div class="ub-focus-bracket ub-fb-br" aria-hidden="true"></div>
+                        <div class="ub-caption-card">
+                            <span>00:00 TO 03:00</span>
+                            <strong>Untied ribbon reveals a wax stamped QR keepsake tag</strong>
+                        </div>
+                    </div>
+
+                    <!-- Beat 1: QR Camera Scan & Obsidian Lock Screen -->
+                    <div class="ub-scene ub-scene--scan" data-scene="1">
+                        <img class="ub-photo ub-photo--blur" src="assets/unboxing-flatlay.jpg" alt="" aria-hidden="true">
+                        <div class="ub-scan-stage">
+                            <div class="ub-scan-tag">
+                                <svg viewBox="0 0 39 39" shape-rendering="crispEdges" aria-hidden="true">
+                                    <rect width="39" height="39" fill="#FFFCF7"/>
+                                    <path fill="none" stroke="#1B1715" stroke-width="1" d="M1 1.5h7m1 0h1m2 0h2m2 0h1m2 0h2m2 0h1m1 0h5m1 0h7M1 2.5h1m5 0h1m2 0h3m1 0h3m2 0h1m1 0h1m1 0h1m2 0h2m3 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m3 0h1m3 0h1m2 0h7m4 0h1m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h2m3 0h4m1 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h3m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h2m1 0h2m2 0h3m2 0h3m1 0h2M1 9.5h1m3 0h1m1 0h5m1 0h4m2 0h2m2 0h1m1 0h1m4 0h5m2 0h1M4 10.5h1m4 0h1m2 0h1m1 0h1m2 0h1m2 0h3m4 0h1m1 0h1m1 0h1m1 0h1M2 11.5h1m3 0h2m2 0h2m1 0h1m3 0h1m1 0h1m1 0h3m4 0h3m1 0h4M1 12.5h1m3 0h2m1 0h2m5 0h1m2 0h1m3 0h2m1 0h1m1 0h4m4 0h1m1 0h1M2 13.5h1m3 0h4m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h4m4 0h3m2 0h1m1 0h1M1 14.5h2m1 0h1m1 0h1m1 0h3m2 0h2m1 0h1m1 0h1m5 0h1m1 0h4m1 0h3m2 0h1M1 15.5h1m4 0h2m1 0h3m1 0h4m2 0h1m1 0h9m1 0h1m1 0h1m1 0h1M1 16.5h1m4 0h1m3 0h1m2 0h1m1 0h3m2 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h1M2 17.5h3m2 0h1m1 0h1m2 0h1m1 0h4m2 0h2m2 0h1m5 0h3m2 0h3M3 18.5h2m1 0h1m3 0h2m1 0h1m5 0h2m1 0h2m1 0h1m1 0h2m4 0h1m1 0h1M1 19.5h2m1 0h8m3 0h2m1 0h3m1 0h11m2 0h1M4 20.5h1m1 0h1m4 0h2m1 0h5m1 0h3m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m1 0h1M2 21.5h1m1 0h4m2 0h1m6 0h2m2 0h3m1 0h1m5 0h2m2 0h1m1 0h1M3 22.5h1m1 0h2m3 0h2m2 0h4m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m2 0h5M1 23.5h7m2 0h1m3 0h1m1 0h3m5 0h5m1 0h1m1 0h1m1 0h1M3 24.5h1m2 0h1m1 0h2m3 0h2m2 0h3m3 0h1m1 0h1m2 0h2m2 0h1m1 0h2m1 0h1M3 25.5h7m9 0h2m2 0h3m1 0h1m1 0h5m1 0h1m1 0h1M1 26.5h2m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h3m3 0h4m3 0h2m1 0h2M3 27.5h1m3 0h3m2 0h1m1 0h1m2 0h3m1 0h1m5 0h2m1 0h1m3 0h2M3 28.5h3m2 0h2m2 0h3m3 0h2m2 0h2m1 0h1m1 0h1m2 0h1m2 0h3m1 0h1M1 29.5h5m1 0h1m1 0h1m2 0h3m1 0h1m1 0h1m1 0h6m1 0h7m1 0h2M9 30.5h3m1 0h1m1 0h5m1 0h1m2 0h1m2 0h1m1 0h1m3 0h1m3 0h1M1 31.5h7m1 0h1m1 0h2m3 0h2m1 0h1m2 0h4m3 0h1m1 0h1m1 0h3M1 32.5h1m5 0h1m2 0h4m1 0h3m2 0h3m4 0h1m1 0h1m3 0h1m1 0h2M1 33.5h1m1 0h3m1 0h1m1 0h3m2 0h2m1 0h1m3 0h1m3 0h1m1 0h1m1 0h5m1 0h1m1 0h1M1 34.5h1m1 0h3m1 0h1m3 0h2m2 0h1m3 0h2m2 0h1m1 0h4m1 0h3m3 0h1M1 35.5h1m1 0h3m1 0h1m2 0h2m3 0h2m1 0h3m3 0h1m5 0h3m1 0h3M1 36.5h1m5 0h1m2 0h4m2 0h3m1 0h3m2 0h1m2 0h1m2 0h2m1 0h3M1 37.5h7m1 0h1m1 0h1m1 0h1m4 0h2m1 0h2m1 0h1m3 0h1m6 0h3"/>
+                                </svg>
+                                <span class="ub-scan-beam" aria-hidden="true"></span>
+                                <span class="ub-scan-pill">cupid.studio &middot; Opening</span>
+                            </div>
+                            <div class="ub-gate-chip">
+                                <small>PRIVATE RIDDLE GATE</small>
+                                <strong>A K O S O M B O</strong>
+                                <span>Unlocked cleanly</span>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Beat 1: QR Camera Scan & Obsidian Lock Screen -->
-                        <div class="ub-scene ub-scene--scan" data-scene="1">
-                            <img class="ub-photo ub-photo--blur" src="assets/unboxing-flatlay.jpg" alt="" aria-hidden="true">
-                            <div class="ub-scan-stage">
-                                <div class="ub-scan-tag">
-                                    <svg viewBox="0 0 39 39" shape-rendering="crispEdges" aria-hidden="true">
-                                        <rect width="39" height="39" fill="#FFFCF7"/>
-                                        <path fill="none" stroke="#1B1715" stroke-width="1" d="M1 1.5h7m1 0h1m2 0h2m2 0h1m2 0h2m2 0h1m1 0h5m1 0h7M1 2.5h1m5 0h1m2 0h3m1 0h3m2 0h1m1 0h1m1 0h1m2 0h2m3 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m3 0h1m3 0h1m2 0h7m4 0h1m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m6 0h1m2 0h2m3 0h4m1 0h1m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m1 0h3m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m1 0h2m1 0h1m2 0h1m1 0h1m1 0h5m2 0h1m2 0h1m1 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h1m1 0h2m1 0h2m2 0h3m2 0h3m1 0h2M1 9.5h1m3 0h1m1 0h5m1 0h4m2 0h2m2 0h1m1 0h1m4 0h5m2 0h1M4 10.5h1m4 0h1m2 0h1m1 0h1m2 0h1m2 0h3m4 0h1m1 0h1m1 0h1m1 0h1M2 11.5h1m3 0h2m2 0h2m1 0h1m3 0h1m1 0h1m1 0h3m4 0h3m1 0h4M1 12.5h1m3 0h2m1 0h2m5 0h1m2 0h1m3 0h2m1 0h1m1 0h4m4 0h1m1 0h1M2 13.5h1m3 0h4m2 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h4m4 0h3m2 0h1m1 0h1M1 14.5h2m1 0h1m1 0h1m1 0h3m2 0h2m1 0h1m1 0h1m5 0h1m1 0h4m1 0h3m2 0h1M1 15.5h1m4 0h2m1 0h3m1 0h4m2 0h1m1 0h9m1 0h1m1 0h1m1 0h1M1 16.5h1m4 0h1m3 0h1m2 0h1m1 0h3m2 0h1m1 0h1m1 0h2m2 0h1m1 0h1m1 0h2m1 0h1M2 17.5h3m2 0h1m1 0h1m2 0h1m1 0h4m2 0h2m2 0h1m5 0h3m2 0h3M3 18.5h2m1 0h1m3 0h2m1 0h1m5 0h2m1 0h2m1 0h1m1 0h2m4 0h1m1 0h1M1 19.5h2m1 0h8m3 0h2m1 0h3m1 0h11m2 0h1M4 20.5h1m1 0h1m4 0h2m1 0h5m1 0h3m1 0h1m2 0h1m1 0h1m2 0h2m1 0h1m1 0h1M2 21.5h1m1 0h4m2 0h1m6 0h2m2 0h3m1 0h1m5 0h2m2 0h1m1 0h1M3 22.5h1m1 0h2m3 0h2m2 0h4m1 0h2m1 0h1m1 0h1m1 0h1m1 0h2m2 0h5M1 23.5h7m2 0h1m3 0h1m1 0h3m5 0h5m1 0h1m1 0h1m1 0h1M3 24.5h1m2 0h1m1 0h2m3 0h2m2 0h3m3 0h1m1 0h1m2 0h2m2 0h1m1 0h2m1 0h1M3 25.5h7m9 0h2m2 0h3m1 0h1m1 0h5m1 0h1m1 0h1M1 26.5h2m1 0h1m3 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h3m3 0h4m3 0h2m1 0h2M3 27.5h1m3 0h3m2 0h1m1 0h1m2 0h3m1 0h1m5 0h2m1 0h1m3 0h2M3 28.5h3m2 0h2m2 0h3m3 0h2m2 0h2m1 0h1m1 0h1m2 0h1m2 0h3m1 0h1M1 29.5h5m1 0h1m1 0h1m2 0h3m1 0h1m1 0h1m1 0h6m1 0h7m1 0h2M9 30.5h3m1 0h1m1 0h5m1 0h1m2 0h1m2 0h1m1 0h1m3 0h1m3 0h1M1 31.5h7m1 0h1m1 0h2m3 0h2m1 0h1m2 0h4m3 0h1m1 0h1m1 0h3M1 32.5h1m5 0h1m2 0h4m1 0h3m2 0h3m4 0h1m1 0h1m3 0h1m1 0h2M1 33.5h1m1 0h3m1 0h1m1 0h3m2 0h2m1 0h1m3 0h1m3 0h1m1 0h1m1 0h5m1 0h1m1 0h1M1 34.5h1m1 0h3m1 0h1m3 0h2m2 0h1m3 0h2m2 0h1m1 0h4m1 0h3m3 0h1M1 35.5h1m1 0h3m1 0h1m2 0h2m3 0h2m1 0h3m3 0h1m5 0h3m1 0h3M1 36.5h1m5 0h1m2 0h4m2 0h3m1 0h3m2 0h1m2 0h1m2 0h2m1 0h3M1 37.5h7m1 0h1m1 0h1m1 0h1m4 0h2m1 0h2m1 0h1m3 0h1m6 0h3"/>
-                                    </svg>
-                                    <span class="ub-scan-beam" aria-hidden="true"></span>
-                                    <span class="ub-scan-pill">cupid.studio &middot; Opening</span>
-                                </div>
-                                <div class="ub-gate-chip">
-                                    <small>PRIVATE RIDDLE GATE</small>
-                                    <strong>A K O S O M B O</strong>
-                                    <span>Unlocked cleanly</span>
-                                </div>
+                    <!-- Beat 2: Obsidian Vinyl + Scattered 35mm Polaroids -->
+                    <div class="ub-scene ub-scene--vinyl" data-scene="2">
+                        <div class="ub-noc-frame">
+                            <div class="ub-noc-top">
+                                <span>OCT 18 &middot; YEAR FOUR</span>
+                                <span>1,461 DAYS</span>
                             </div>
-                        </div>
-
-                        <!-- Beat 2: Obsidian Vinyl + Scattered 35mm Polaroids -->
-                        <div class="ub-scene ub-scene--vinyl" data-scene="2">
-                            <div class="ub-noc-frame">
-                                <div class="ub-noc-top">
-                                    <span>OCT 18 &middot; YEAR FOUR</span>
-                                    <span>1,461 DAYS</span>
+                            <div class="ub-noc-body">
+                                <div class="ub-disc-wrap">
+                                    <div class="ub-disc"><span>DUSK</span></div>
+                                    <small>Track 01 Playing</small>
                                 </div>
-                                <div class="ub-noc-body">
-                                    <div class="ub-disc-wrap">
-                                        <div class="ub-disc"><span>DUSK</span></div>
-                                        <small>Track 01 Playing</small>
-                                    </div>
-                                    <div class="ub-pol-stack">
-                                        <figure class="ub-pol ub-pol-a">
-                                            <img src="assets/nocturne-couple.jpg" alt="Evening twilight street walk photograph">
-                                            <figcaption>After the rain</figcaption>
-                                        </figure>
-                                        <figure class="ub-pol ub-pol-b">
-                                            <img src="assets/candle-dinner.jpg" alt="Candlelit dinner table photograph">
-                                            <figcaption>Table toast</figcaption>
-                                        </figure>
-                                    </div>
+                                <div class="ub-pol-stack">
+                                    <figure class="ub-pol ub-pol-a">
+                                        <img src="assets/nocturne-couple.jpg" alt="Evening twilight street walk photograph">
+                                        <figcaption>After the rain</figcaption>
+                                    </figure>
+                                    <figure class="ub-pol ub-pol-b">
+                                        <img src="assets/candle-dinner.jpg" alt="Candlelit dinner table photograph">
+                                        <figcaption>Table toast</figcaption>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Beat 3: Sealed Letter Reveal & Final Slate -->
-                        <div class="ub-scene ub-scene--seal" data-scene="3">
-                            <div class="ub-letter-card">
-                                <div class="ub-seal-dot">SEAL OPENED</div>
-                                <p class="ub-letter-quote">
-                                    &ldquo;I wanted something you could keep long after status posts vanish tomorrow.&rdquo;
-                                </p>
-                                <div class="ub-letter-sign">Delivered ready in 2 to 5 days &middot; Always yours</div>
-                            </div>
+                    <!-- Beat 3: Sealed Letter Reveal & Final Slate -->
+                    <div class="ub-scene ub-scene--seal" data-scene="3">
+                        <div class="ub-letter-card">
+                            <div class="ub-seal-dot">SEAL OPENED</div>
+                            <p class="ub-letter-quote">
+                                &ldquo;I wanted something you could keep long after status posts vanish tomorrow.&rdquo;
+                            </p>
+                            <div class="ub-letter-sign">Delivered ready in 2 to 5 days &middot; Always yours</div>
                         </div>
+                    </div>
 
-                        <!-- Tactile Start / Play Overlay -->
-                        <button class="ub-play-overlay" id="ubPlayOverlay" type="button" onclick="toggleUnboxingPlay()" aria-label="Play 12 second unboxing showcase">
-                            <span class="ub-play-circle">&#9654;</span>
-                            <span class="ub-play-txt">Watch 12s Delivery Film</span>
-                        </button>
+                    <!-- Tactile Start / Play Overlay -->
+                    <button class="ub-play-overlay" id="ubPlayOverlay" type="button" onclick="toggleUnboxingPlay()" aria-label="Play 12 second unboxing showcase">
+                        <span class="ub-play-circle">&#9654;</span>
+                        <span class="ub-play-txt">Watch 12s Delivery Film</span>
+                    </button>
+                </div>
+
+                <!-- Right: Delivery Director Console & Handoff Dossier -->
+                <div class="delivery-console-panel">
+                    <div class="delivery-console-top">
+                        <span class="delivery-kicker">THE DELIVERY EXPERIENCE &middot; 12.0S REEL</span>
+                        <h3 class="delivery-title">How a Physical Parcel Opens a Private Digital World</h3>
+                        <p class="delivery-desc">
+                            Every commission is designed for an unforgettable reveal—whether sent directly as a private link at midnight or discovered inside a linen box via our wax-stamped QR gift tag.
+                        </p>
                     </div>
 
                     <div class="unboxing-controls">
@@ -427,103 +649,209 @@
                             <button class="ub-beat-btn" type="button" onclick="seekUnboxingBeat(3)">04 Seal</button>
                         </div>
                     </div>
-                    <div class="archive-disclaimer" style="margin-top: 1rem;">
-                        <strong>Link or QR Card Delivery:</strong> Every finished site launches on its own private link (e.g. <code>cupid.studio/ama24</code>) ready to send via WhatsApp or text—or pair it with our printable QR Gift Tag for physical boxes &amp; flowers.
-                    </div>
-                </div>
 
-                <!-- Right: Option 1 Complete Archive Editions -->
-                <div class="archive-stack">
-                    <article class="archive-folio">
-                        <div class="folio-thumbs">
-                            <img src="assets/nocturne-couple.jpg" alt="Nocturne anniversary twilight walk preview">
-                            <img src="assets/candle-dinner.jpg" alt="Candlelit dinner wax sealed envelope preview">
+                    <div class="delivery-handoff-box">
+                        <div>
+                            <strong>Link or Physical QR Card Handoff</strong>
+                            <p>Every finished keepsake ships on its own private URL (e.g. <code>cupid.studio/ama24</code>) ready for WhatsApp—or paired with a print-ready cardstock QR Gift Tag.</p>
                         </div>
-                        <div class="folio-body">
-                            <span class="folio-kicker">EDITION 01 &middot; ANNIVERSARY KEEPSAKE</span>
-                            <h3>Nocturne in Three Acts</h3>
-                            <p>Dark obsidian charcoal atmosphere with a custom riddle gate, spinning synth vinyl track, 3D flip photo cards, and crimson epilogue seal.</p>
-                            <a href="archive/nocturne.html" class="folio-link">Open Complete Edition &rarr;</a>
-                        </div>
-                    </article>
-
-                    <article class="archive-folio">
-                        <div class="folio-thumbs folio-thumbs--single">
-                            <img src="assets/botanical-roses.jpg" alt="Okoto Garden Supper travertine table and roses preview">
-                        </div>
-                        <div class="folio-body">
-                            <span class="folio-kicker">EDITION 02 &middot; FUNCTION &amp; DINNER PORTAL</span>
-                            <h3>The Okoto Garden Supper</h3>
-                            <p>Sunlit cypress linen portal featuring live countdown timer, tap fabric dress swatches, expandable agenda, and downloadable PNG guest pass.</p>
-                            <a href="archive/botanical-soiree.html" class="folio-link">Open Complete Edition &rarr;</a>
-                        </div>
-                    </article>
-
-                    <div class="archive-disclaimer">
-                        <strong>Never Reusable Templates:</strong> These archive builds show anonymized craft depth. Every new Cupid commission begins from scratch around your story and palette.
+                        <button class="btn btn-outline ub-btn-sm" type="button" onclick="openTagModal()">Preview QR Gift Tag</button>
                     </div>
                 </div>
             </div>
+
+            <!-- Part B: Selected Complete Studio Archive Editions (Horizontal 2-Column Exhibition) -->
+            <div class="archive-exhibition-head">
+                <span class="archive-exhibition-kicker">SELECTED COMPLETE PROJECTS &middot; STUDIO ARCHIVE</span>
+                <span class="archive-exhibition-note">Never reusable templates — every commission begins from a blank canvas</span>
+            </div>
+
+            <div class="archive-exhibition-grid">
+                <article class="archive-folio">
+                    <div class="folio-thumbs">
+                        <img src="assets/nocturne-couple.jpg" alt="Nocturne anniversary twilight walk preview">
+                        <img src="assets/candle-dinner.jpg" alt="Candlelit dinner wax sealed envelope preview">
+                    </div>
+                    <div class="folio-body">
+                        <div class="folio-meta-row">
+                            <span class="folio-kicker">EDITION 01 &middot; ANNIVERSARY KEEPSAKE</span>
+                            <span class="folio-palette-tag">Obsidian &amp; Gold</span>
+                        </div>
+                        <h3>Nocturne in Three Acts</h3>
+                        <p>Dark obsidian charcoal atmosphere crafted for a fourth anniversary—featuring a custom riddle gate, spinning synth vinyl track, 3D flip photo cards, and crimson epilogue seal.</p>
+                        <div class="folio-chips">
+                            <span class="rep-chip">Riddle Gate</span>
+                            <span class="rep-chip">Vinyl Synth Track</span>
+                            <span class="rep-chip">3D Flip Polaroids</span>
+                            <span class="rep-chip">Wax Epilogue</span>
+                        </div>
+                        <div class="folio-footer">
+                            <a href="archive/nocturne.html" class="folio-link">Open Complete Edition &rarr;</a>
+                            <button class="btn btn-outline ub-btn-sm" type="button" onclick="openBookingModal('Full Keepsake Story', 'Anniversary')">Commission Similar</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="archive-folio">
+                    <div class="folio-thumbs folio-thumbs--single">
+                        <img src="assets/botanical-roses.jpg" alt="Okoto Garden Supper travertine table and roses preview">
+                    </div>
+                    <div class="folio-body">
+                        <div class="folio-meta-row">
+                            <span class="folio-kicker">EDITION 02 &middot; FUNCTION &amp; DINNER PORTAL</span>
+                            <span class="folio-palette-tag">Cypress &amp; Travertine</span>
+                        </div>
+                        <h3>The Okoto Garden Supper</h3>
+                        <p>Sunlit cypress linen invitation portal designed for an intimate forty-guest celebration—featuring a live countdown timer, interactive fabric dress swatches, expandable agenda, and downloadable PNG guest pass.</p>
+                        <div class="folio-chips">
+                            <span class="rep-chip">Live Countdown</span>
+                            <span class="rep-chip">1-Tap .ICS Calendar</span>
+                            <span class="rep-chip">Fabric Swatches</span>
+                            <span class="rep-chip">PNG Gate Pass</span>
+                        </div>
+                        <div class="folio-footer">
+                            <a href="archive/botanical-soiree.html" class="folio-link">Open Complete Edition &rarr;</a>
+                            <button class="btn btn-outline ub-btn-sm" type="button" onclick="openBookingModal('Function or Deluxe Page', 'Function / Event')">Commission Similar</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
 
-        <!-- Rates, Extras & Estimate Calculator -->
+        <!-- 05 · Rates, Extras & Estimate Calculator -->
         <section class="section-block reveal" id="rates">
-            <div class="ledger-head">
-                <h2>Studio Rates &amp; Estimate</h2>
+            <div class="section-kicker-bar">
+                <span class="kicker-index">05</span>
+                <span class="kicker-label">Studio Rates &amp; Estimate</span>
+                <span class="kicker-rule"></span>
                 <div class="curr-switch" role="group" aria-label="Switch currency">
                     <button class="curr-opt active" type="button" onclick="setCurrency('GHS', this)">GHS (₵)</button>
                     <button class="curr-opt" type="button" onclick="setCurrency('USD', this)">USD ($)</button>
                 </div>
             </div>
 
-            <div class="rate-ledger">
-                <div class="rate-row" data-tier="Simple Note Page" onclick="selectTier('Simple Note Page')">
-                    <div class="rate-name">
-                        <strong>Simple Note Page</strong>
-                        <span>Quick surprises &amp; digital letters</span>
-                    </div>
-                    <p class="rate-desc">
-                        Single narrative page with <strong>interactive wax-seal envelope reveal</strong>, typewriter letter pacing, voice or ambient audio pairing, and private hosting link.
-                    </p>
-                    <div class="rate-cta">
-                        <span class="rate-price" data-ghs="250" data-usd="25">₵250</span>
-                        <button class="btn btn-outline" type="button" onclick="event.stopPropagation(); openBookingModal('Simple Note Page')">Select</button>
-                    </div>
+            <div class="pricing-intro-grid">
+                <div>
+                    <h2 class="pricing-section-title">Transparent Studio Packages</h2>
                 </div>
+                <p class="pricing-section-sub">
+                    Every commission is individually written and coded from scratch. Start with an essential sealed note (<strong>GH₵250</strong>), step up <strong>+GH₵300</strong> to our flagship multi-chapter keepsake story (<strong>GH₵550</strong>), or commission a dedicated event &amp; function portal (<strong>GH₵950</strong>).
+                </p>
+            </div>
 
-                <div class="rate-row selected-tier" data-tier="Full Keepsake Story" onclick="selectTier('Full Keepsake Story')">
-                    <div class="rate-name">
-                        <strong>Full Keepsake Story</strong>
-                        <span>Most popular · Multi chapter tribute</span>
-                    </div>
-                    <p class="rate-desc">
-                        Multi-chapter keepsake with <strong>private riddle gate</strong>, <strong>3D flip-card Polaroids</strong>, interactive milestone timeline, wishes wall, and <strong>synced vinyl soundtrack player</strong>.
-                    </p>
-                    <div class="rate-cta">
-                        <span class="rate-price" data-ghs="550" data-usd="50">₵550</span>
-                        <button class="btn btn-ink" type="button" onclick="event.stopPropagation(); openBookingModal('Full Keepsake Story')">Select</button>
-                    </div>
-                </div>
+            <!-- Horizontal 3-column package composition -->
+            <div class="pricing-columns">
 
-                <div class="rate-row" data-tier="Function or Deluxe Page" onclick="selectTier('Function or Deluxe Page')">
-                    <div class="rate-name">
-                        <strong>Function or Deluxe Page</strong>
-                        <span>Events, ceremonies, dinners &amp; deluxe editions</span>
+                <!-- Package 01: Simple Note Page -->
+                <article class="pricing-col" data-tier="Simple Note Page" onclick="selectTier('Simple Note Page')">
+                    <div class="pricing-col-top">
+                        <span class="pricing-tier-label">01 · Essential Digital Surprise</span>
+                        <h3 class="pricing-name">Simple Note Page</h3>
+                        <p class="pricing-positioning">An intimate single-page narrative keepsake built around a personal letter and wax-seal reveal.</p>
                     </div>
-                    <p class="rate-desc">
-                        Complete invitation portal with live countdown, <strong>one-tap Calendar (.ics) save-the-date</strong>, dress-code fabric swatches, venue directions, and <strong>mintable PNG gate pass</strong>.
-                    </p>
-                    <div class="rate-cta">
-                        <span class="rate-price" data-ghs="950" data-usd="90">₵950</span>
-                        <button class="btn btn-outline" type="button" onclick="event.stopPropagation(); openBookingModal('Function or Deluxe Page')">Select</button>
+
+                    <div class="pricing-price-block">
+                        <span class="rate-price pricing-figure" data-ghs="250" data-usd="25">₵250</span>
+                        <span class="pricing-currency-label">GH Cedis</span>
                     </div>
-                </div>
+
+                    <div class="pricing-diff-note">
+                        Entry-level commission &middot; Focused single-chapter reveal
+                    </div>
+
+                    <div class="pricing-features">
+                        <ul class="pricing-feature-list">
+                            <li>Single narrative page</li>
+                            <li>Interactive wax-seal envelope reveal</li>
+                            <li>Typewriter letter pacing</li>
+                            <li>Voice or ambient audio pairing</li>
+                            <li>Private hosting link</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-col-footer">
+                        <button class="btn btn-outline pricing-select-btn" type="button" onclick="event.stopPropagation(); openBookingModal('Simple Note Page')">Select Simple Note</button>
+                    </div>
+                </article>
+
+                <!-- Package 02: Full Keepsake Story (Flagship / Centrepiece) -->
+                <article class="pricing-col pricing-col--flagship selected-tier" data-tier="Full Keepsake Story" onclick="selectTier('Full Keepsake Story')">
+                    <div class="pricing-flagship-badge">SIGNATURE EXPERIENCE &middot; MOST POPULAR</div>
+
+                    <div class="pricing-col-top">
+                        <span class="pricing-tier-label">02 · Flagship Keepsake</span>
+                        <h3 class="pricing-name">Full Keepsake Story</h3>
+                        <p class="pricing-positioning">Our signature multi-chapter digital world—combining photography, music, timeline milestones, and interactive discovery.</p>
+                    </div>
+
+                    <div class="pricing-price-block">
+                        <span class="rate-price pricing-figure" data-ghs="550" data-usd="50">₵550</span>
+                        <span class="pricing-currency-label">GH Cedis</span>
+                    </div>
+
+                    <div class="pricing-diff-note pricing-diff-note--flagship">
+                        +GH₵300 upgrade &middot; Unlocks multi-chapter story, riddle gate, 3D Polaroids, wishes wall &amp; vinyl player
+                    </div>
+
+                    <div class="pricing-features">
+                        <ul class="pricing-feature-list">
+                            <li>Multi-chapter keepsake</li>
+                            <li>Private riddle gate <em>(included)</em></li>
+                            <li>3D flip-card Polaroids</li>
+                            <li>Interactive milestone timeline</li>
+                            <li>Wishes wall <em>(included)</em></li>
+                            <li>Synced vinyl soundtrack player</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-col-footer">
+                        <button class="btn btn-ink pricing-select-btn" type="button" onclick="event.stopPropagation(); openBookingModal('Full Keepsake Story')">Commission Flagship Story</button>
+                        <span class="pricing-flagship-note">Recommended for Birthdays, Anniversaries &amp; Valentine's</span>
+                    </div>
+                </article>
+
+                <!-- Package 03: Function or Deluxe Page -->
+                <article class="pricing-col" data-tier="Function or Deluxe Page" onclick="selectTier('Function or Deluxe Page')">
+                    <div class="pricing-col-top">
+                        <span class="pricing-tier-label">03 · Event &amp; Invitation Portal</span>
+                        <h3 class="pricing-name">Function or Deluxe Page</h3>
+                        <p class="pricing-positioning">A dedicated guest and ceremony portal engineered for private dinners, weddings, graduations, and milestone gatherings.</p>
+                    </div>
+
+                    <div class="pricing-price-block">
+                        <span class="rate-price pricing-figure" data-ghs="950" data-usd="90">₵950</span>
+                        <span class="pricing-currency-label">GH Cedis</span>
+                    </div>
+
+                    <div class="pricing-diff-note">
+                        +GH₵400 upgrade &middot; Introduces guest logistics, calendar sync, dress-code swatches &amp; gate passes
+                    </div>
+
+                    <div class="pricing-features">
+                        <ul class="pricing-feature-list">
+                            <li>Complete invitation portal</li>
+                            <li>Live countdown</li>
+                            <li>One-tap Calendar (.ics) save-the-date</li>
+                            <li>Dress-code fabric swatches</li>
+                            <li>Venue directions</li>
+                            <li>Downloadable PNG guest pass</li>
+                        </ul>
+                    </div>
+
+                    <div class="pricing-col-footer">
+                        <button class="btn btn-outline pricing-select-btn" type="button" onclick="event.stopPropagation(); openBookingModal('Function or Deluxe Page')">Select Function Portal</button>
+                    </div>
+                </article>
+
             </div>
 
             <div class="extras-box">
                 <div class="extras-head">
-                    <h3>Optional Studio Addons</h3>
-                    <span>Tap to toggle extras in your estimate</span>
+                    <div>
+                        <h3>Optional Studio Add-Ons</h3>
+                        <p class="extras-sub">Tailor your commission with priority delivery or physical-to-digital accessories. Features already included in your selected package are automatically marked.</p>
+                    </div>
+                    <span>Tap to toggle in estimate</span>
                 </div>
 
                 <div class="extras-grid">
@@ -532,7 +860,7 @@
                             <span class="extra-check" aria-hidden="true">&#10003;</span>
                             <div>
                                 <span class="extra-title">Express 24h Turnaround</span>
-                                <span class="extra-note">Priority same day or next day build for tight deadlines</span>
+                                <span class="extra-note">Priority same-day or next-day build for urgent celebrations</span>
                             </div>
                         </div>
                         <span class="extra-cost" data-ghs="+₵100" data-usd="+$10">+₵100</span>
@@ -543,7 +871,7 @@
                             <span class="extra-check" aria-hidden="true">&#10003;</span>
                             <div>
                                 <span class="extra-title">Printable QR Gift Tag</span>
-                                <span class="extra-note">Print ready keepsake card PDF for gift boxes &amp; flowers</span>
+                                <span class="extra-note">Print-ready keepsake card PDF for gift boxes &amp; flowers</span>
                                 <button type="button" class="tag-preview-link" onclick="event.stopPropagation(); openTagModal()">Preview QR Tag</button>
                             </div>
                         </div>
@@ -586,8 +914,73 @@
             </div>
         </section>
 
+        <!-- 06 · The Commission Process -->
+        <section class="section-block reveal" id="process">
+            <div class="section-kicker-bar">
+                <span class="kicker-index">06</span>
+                <span class="kicker-label">Commission Process</span>
+                <span class="kicker-rule"></span>
+                <span class="kicker-meta">Three Simple Stages</span>
+            </div>
+
+            <div class="process-header-grid">
+                <div>
+                    <h2 class="process-title">How Every Keepsake Comes to Life</h2>
+                    <p class="process-subtitle">From your first message to a gift-ready link in 2 to 5 days.</p>
+                </div>
+                <div class="process-cta-top">
+                    <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Start Your Brief &rarr;</button>
+                </div>
+            </div>
+
+            <div class="process-editorial-grid">
+                <article class="process-step-card">
+                    <div class="proc-step-num">01</div>
+                    <span class="proc-step-tag">STAGE ONE</span>
+                    <h3 class="proc-step-title">Share Your Story</h3>
+                    <p class="proc-step-desc">
+                        Complete our private brief form with dates, names, personal notes, songs, or photo selections. We review your requirements and outline a bespoke structure tailored to your celebration.
+                    </p>
+                    <div class="proc-step-meta">Same Day Outline · 50% Studio Deposit</div>
+                </article>
+
+                <article class="process-step-card">
+                    <div class="proc-step-num">02</div>
+                    <span class="proc-step-tag">STAGE TWO</span>
+                    <h3 class="proc-step-title">Private Staging Review</h3>
+                    <p class="proc-step-desc">
+                        Receive a private preview staging link to test all interactions: touch animations, riddle gate, soundtrack timing, and typography. Request wording adjustments or pacing refinements.
+                    </p>
+                    <div class="proc-step-meta">Interactive Staging · 2 to 3 Days Build</div>
+                </article>
+
+                <article class="process-step-card proc-step-card--final">
+                    <div class="proc-step-num">03</div>
+                    <span class="proc-step-tag">STAGE THREE</span>
+                    <h3 class="proc-step-title">Gift-Ready Delivery</h3>
+                    <p class="proc-step-desc">
+                        Your permanent bespoke website launches on its own clean link (e.g. <code>cupid.studio/ama24</code>). Send via WhatsApp or pair with our printable QR gift tag cardstock for gift hampers and bouquets.
+                    </p>
+                    <div class="proc-step-meta">Permanent URL · Printable Gift Tag Ready</div>
+                </article>
+            </div>
+
+            <!-- Final Studio Call-to-Action Banner -->
+            <div class="final-cta-banner">
+                <div class="final-cta-copy">
+                    <span class="final-cta-kicker">CUPID STUDIO &middot; AKOSOMBO, GHANA</span>
+                    <h3>Ready to commission a private digital world?</h3>
+                    <p>Tell us who you are celebrating and when. We will prepare your bespoke structure and open direct WhatsApp or email dispatch.</p>
+                </div>
+                <div class="final-cta-actions">
+                    <button class="btn btn-ink" type="button" onclick="openBookingModal('')">Open Commission Brief</button>
+                    <button class="btn btn-outline" type="button" onclick="openVCardModal()">Save Studio Contact</button>
+                </div>
+            </div>
+        </section>
+
         <footer class="colophon">
-            <span>CUPID · MCLANOR JEFF (#THECHUCKSDEVELOPER)</span>
+            <span>CUPID STUDIO · JEPHTHAH KWAME LANOR (#THECHUCKSDEVELOPER)</span>
             <span>AKOSOMBO, GHANA · MCLANORJEPHTHAH@GMAIL.COM</span>
         </footer>
     </main>
@@ -717,11 +1110,11 @@
         <div class="modal-card modal-card--vcard">
             <button class="modal-close" type="button" aria-label="Close save card options" onclick="closeModal('vcardModal')">&times;</button>
             <h3 id="vcardTitle">Save Cupid Studio Card</h3>
-            <p class="sub">Pick whichever option suits your device to save #thechucksdeveloper straight into contacts or photos.</p>
+            <p class="sub">Pick whichever option suits your device to save Jephthah Kwame Lanor (#thechucksdeveloper) straight into contacts or photos.</p>
 
             <div class="vcard-qr-panel">
                 <div class="vcard-qr-box">
-                    <img src="assets/vcard-qr.svg" alt="Camera scannable vCard QR code for #thechucksdeveloper Cupid Studio">
+                    <img src="assets/vcard-qr.svg" alt="Camera scannable vCard QR code for Jephthah Kwame Lanor Cupid Studio">
                 </div>
                 <div class="vcard-qr-copy">
                     <span class="vcard-kicker">CAMERA CONTACT IMPORT</span>

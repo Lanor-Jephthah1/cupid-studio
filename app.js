@@ -1,9 +1,9 @@
 /* ==========================================================================
    CUPID STUDIO APPLICATION
-   Bespoke Keepsake Webpages & Digital Invites | McLanor Jeff (#thechucksdeveloper)
+   Bespoke Keepsake Webpages & Digital Invites | Jephthah Kwame Lanor (#thechucksdeveloper)
    ========================================================================== */
 const CUPID_CONFIG = {
-    founder: "McLanor Jeff",
+    founder: "Jephthah Kwame Lanor",
     handle: "#thechucksdeveloper",
     email: "mclanorjephthah@gmail.com",
     whatsappNumber: "233599623173",
@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initScrollProgress();
     initActiveNav();
     initUnboxingPlayer();
+    syncIncludedExtrasForTier();
     updateEstimateUI();
 
     const params = new URLSearchParams(window.location.search);
@@ -160,7 +161,7 @@ function initScrollProgress() {
 }
 
 function initActiveNav() {
-    const links = document.querySelectorAll(".nav-links a[data-section]");
+    const links = document.querySelectorAll(".studio-nav-link[data-section], .nav-links a[data-section]");
     const sections = [...links].map(a => document.getElementById(a.dataset.section)).filter(Boolean);
     if (!("IntersectionObserver" in window) || !sections.length) return;
 
@@ -170,7 +171,7 @@ function initActiveNav() {
                 links.forEach(l => l.classList.toggle("active", l.dataset.section === entry.target.id));
             }
         });
-    }, { rootMargin: "-35% 0px -55% 0px" });
+    }, { rootMargin: "-25% 0px -65% 0px" });
     sections.forEach(sec => obs.observe(sec));
 }
 
@@ -245,6 +246,10 @@ function selectOccasion(key, tabBtn) {
     currentOccasionKey = key;
     activeChapterIdx = 0;
 
+    if (!tabBtn) {
+        tabBtn = document.querySelector(`.occ-tab[data-occ="${key}"]`);
+    }
+
     document.querySelectorAll(".occ-tab").forEach(t => {
         t.classList.remove("active");
         t.setAttribute("aria-selected", "false");
@@ -276,6 +281,14 @@ function selectOccasion(key, tabBtn) {
     renderBothDemoScreens();
     if (!document.getElementById("fullDemoModal").hidden) {
         syncFullDemo();
+    }
+}
+
+function jumpToOccasion(key) {
+    selectOccasion(key);
+    const desk = document.getElementById("occasions");
+    if (desk) {
+        desk.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 }
 
@@ -895,15 +908,53 @@ function playChime(type) {
 /* ==========================================================================
    PACKAGES, EXTRAS & LIVE ESTIMATE BUILDER
    ========================================================================== */
+const TIER_INCLUDED_EXTRAS = {
+    "Simple Note Page": [],
+    "Full Keepsake Story": ["pin", "wishes"],
+    "Function or Deluxe Page": []
+};
+
+function syncIncludedExtrasForTier() {
+    const includedIds = TIER_INCLUDED_EXTRAS[selectedTierName] || [];
+    document.querySelectorAll(".extra-item").forEach(el => {
+        const id = el.dataset.id;
+        const isIncluded = includedIds.includes(id);
+        el.classList.toggle("included-in-tier", isIncluded);
+        const costEl = el.querySelector(".extra-cost");
+        if (isIncluded) {
+            selectedExtras.delete(id);
+            el.classList.remove("checked");
+            if (costEl) costEl.textContent = "Included";
+        } else if (costEl) {
+            costEl.textContent = currentCurrency === "USD" ? costEl.dataset.usd : costEl.dataset.ghs;
+        }
+    });
+}
+
 function selectTier(tierName) {
     selectedTierName = tierName;
+
+    // New horizontal pricing columns
+    document.querySelectorAll(".pricing-col").forEach(col => {
+        const match = col.dataset.tier === tierName;
+        col.classList.toggle("selected-tier", match);
+        const selectBtn = col.querySelector(".pricing-select-btn");
+        if (selectBtn) {
+            const isFlagship = col.classList.contains("pricing-col--flagship");
+            selectBtn.className = "btn pricing-select-btn " + (match || isFlagship ? "btn-ink" : "btn-outline");
+        }
+    });
+
+    // Legacy rate-row fallback (hidden, kept for JS compat)
     document.querySelectorAll(".rate-row").forEach(row => {
         const match = row.dataset.tier === tierName;
         row.classList.toggle("selected-tier", match);
         const btn = row.querySelector("button");
         if (btn) btn.className = match ? "btn btn-ink" : "btn btn-outline";
     });
+
     setCupidSelectValue("ddPackage", tierName);
+    syncIncludedExtrasForTier();
     updateEstimateUI();
 }
 
@@ -973,6 +1024,10 @@ document.addEventListener("click", function (e) {
 });
 
 function toggleExtra(el) {
+    if (el.classList.contains("included-in-tier")) {
+        showToast(`Already included in ${selectedTierName} at no extra charge.`);
+        return;
+    }
     const id = el.dataset.id;
     const willCheck = !selectedExtras.has(id);
     if (willCheck) selectedExtras.add(id);
@@ -988,6 +1043,7 @@ function setCurrency(curr, btn) {
     if (btn) btn.classList.add("active");
 
     const symbol = curr === "USD" ? "$" : "₵";
+    const currencyLabel = curr === "USD" ? "US Dollars" : "GH Cedis";
     document.querySelectorAll(".rate-price").forEach(el => {
         el.classList.add("swapping");
         setTimeout(() => {
@@ -996,9 +1052,10 @@ function setCurrency(curr, btn) {
             el.classList.remove("swapping");
         }, 140);
     });
-    document.querySelectorAll(".extra-cost").forEach(el => {
-        el.textContent = curr === "USD" ? el.dataset.usd : el.dataset.ghs;
+    document.querySelectorAll(".pricing-currency-label").forEach(el => {
+        el.textContent = currencyLabel;
     });
+    syncIncludedExtrasForTier();
     updateEstimateUI();
 }
 
@@ -1006,7 +1063,7 @@ function updateEstimateUI() {
     const symbol = currentCurrency === "USD" ? "$" : "₵";
     let total = CUPID_CONFIG.prices[currentCurrency][selectedTierName] || 0;
     const checkedExtras = [];
-    document.querySelectorAll(".extra-item.checked").forEach(el => {
+    document.querySelectorAll(".extra-item.checked:not(.included-in-tier)").forEach(el => {
         const add = Number(currentCurrency === "USD" ? el.dataset.usd : el.dataset.ghs) || 0;
         total += add;
         checkedExtras.push(el.querySelector(".extra-title").textContent.trim());
@@ -1097,7 +1154,7 @@ function buildBrief() {
     const symbol = currentCurrency === "USD" ? "$" : "₵";
     let total = CUPID_CONFIG.prices[currentCurrency][pkg] || 0;
     const extras = [];
-    document.querySelectorAll(".extra-item.checked").forEach(el => {
+    document.querySelectorAll(".extra-item.checked:not(.included-in-tier)").forEach(el => {
         total += Number(currentCurrency === "USD" ? el.dataset.usd : el.dataset.ghs) || 0;
         extras.push(el.querySelector(".extra-title").textContent.trim());
     });
@@ -1193,7 +1250,7 @@ async function shareVCardFile() {
         if (navigator.canShare && navigator.canShare({ files: [file] })) {
             await navigator.share({
                 files: [file],
-                title: "McLanor Jeff · Cupid Studio",
+                title: "Jephthah Kwame Lanor · Cupid Studio",
                 text: "Save Cupid Studio contact card (.vcf)"
             });
             showToast("Shared .vcf to your phone sheet.");
@@ -1203,7 +1260,7 @@ async function shareVCardFile() {
     if (navigator.share) {
         try {
             await navigator.share({
-                title: "McLanor Jeff · Cupid Studio",
+                title: "Jephthah Kwame Lanor · Cupid Studio",
                 text: "Bespoke keepsake webpages & digital invites by Cupid Studio.",
                 url: window.location.href
             });
@@ -1253,7 +1310,7 @@ function downloadCardImage() {
 
     ctx.fillStyle = obsidian ? "#EFE6D8" : "#181210";
     ctx.font = "600 24px sans-serif";
-    ctx.fillText("McLanor Jeff · #thechucksdeveloper", 88, 548);
+    ctx.fillText("Jephthah Kwame Lanor · #thechucksdeveloper", 88, 548);
 
     ctx.fillStyle = obsidian ? "#C8A25B" : "#9E2A2B";
     ctx.font = "500 22px monospace";
@@ -1271,7 +1328,7 @@ function downloadCardImage() {
 
 async function copyContactDetails() {
     const info = [
-        "Cupid Studio · McLanor Jeff (#thechucksdeveloper)",
+        "Cupid Studio · Jephthah Kwame Lanor (#thechucksdeveloper)",
         "Bespoke Keepsake Webpages & Digital Invites",
         `Email: ${CUPID_CONFIG.email}`,
         "Studio Card: https://cupid-studio.vercel.app/",
@@ -1287,7 +1344,7 @@ async function copyContactDetails() {
 }
 
 async function shareCard() {
-    const text = `Cupid by McLanor Jeff (${CUPID_CONFIG.handle}): custom webpages for birthdays, anniversaries, functions & Valentine's. Open the studio card to submit a booking brief.`;
+    const text = `Cupid by Jephthah Kwame Lanor (${CUPID_CONFIG.handle}): custom webpages for birthdays, anniversaries, functions & Valentine's. Open the studio card to submit a booking brief.`;
     if (navigator.share) {
         try {
             await navigator.share({ title: "Cupid Business Card", text, url: window.location.href });
