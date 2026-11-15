@@ -1,0 +1,572 @@
+/* ==========================================================================
+   HERO SECTION, CARD COLOR TOOLBAR & 3D INTERACTIVE CALLING CARD
+   ========================================================================== */
+.hero-section {
+    padding: clamp(20px, 3.5vw, 48px) 0 clamp(48px, 6vw, 80px);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+    gap: clamp(28px, 3.6vw, 48px);
+    align-items: start;
+}
+
+.hero-editorial {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(2.45rem, 4.4vw, 4.05rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    margin-bottom: 18px;
+}
+.hero-headline em {
+    font-style: italic;
+    color: var(--crimson);
+}
+
+/* Smooth Animated Typing Headline with Zero Layout Shift */
+.hero-headline--typing {
+    position: relative;
+    display: block;
+}
+.hero-typing-ghost {
+    visibility: hidden;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+}
+.hero-typing-live {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+}
+.typing-caret {
+    display: inline-block;
+    margin-left: 2px;
+    font-weight: 300;
+    color: var(--crimson);
+    animation: caretBlink 0.85s steps(2, start) infinite;
+}
+.typing-caret.is-done {
+    animation: caretFadeOut 1.8s ease forwards;
+}
+@keyframes caretBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+@keyframes caretFadeOut {
+    0%, 60% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.hero-lead {
+    font-size: clamp(1.04rem, 1.28vw, 1.2rem);
+    line-height: 1.58;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+    max-width: 610px;
+}
+
+.hero-narrative-box {
+    background: var(--card-bg);
+    border: 1px solid var(--rule-strong);
+    border-left: 3px solid var(--crimson);
+    padding: 22px 24px;
+    margin-bottom: 26px;
+    box-shadow: 0 4px 16px -6px rgba(27, 23, 21, 0.05);
+}
+.hero-narrative-box p {
+    font-size: 0.94rem;
+    line-height: 1.62;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+}
+.hero-narrative-box p strong {
+    color: var(--ink);
+}
+
+.hero-occasion-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+.hero-occ-pill {
+    background: var(--cotton-bg);
+    border: 1px solid var(--rule-strong);
+    padding: 5px 11px;
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.16s ease;
+}
+.hero-occ-pill:hover {
+    background: var(--crimson);
+    color: #FFFDF9;
+    border-color: var(--crimson);
+}
+
+.hero-meta-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+}
+.hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.hero-meta-item .meta-label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+}
+.hero-meta-item strong {
+    font-size: 0.85rem;
+    color: var(--ink);
+}
+
+.hero-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Right Column: Gift Box Bridge & Calling Card */
+.atelier-tableau {
+    background: var(--card-bg);
+    border: 1px solid var(--rule-strong);
+    padding: 18px;
+    box-shadow: 0 12px 32px -14px rgba(26, 22, 21, 0.08);
+}
+
+.atelier-slate-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+}
+.atelier-slate-bar strong {
+    color: var(--crimson);
+}
+
+.atelier-bridge-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--linen-bg);
+    border: 1px solid var(--rule-strong);
+    padding: 12px;
+    margin-bottom: 14px;
+}
+.atelier-thumb-wrap {
+    width: 84px;
+    height: 76px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid var(--rule-strong);
+}
+.atelier-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.atelier-bridge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.atelier-bridge-text span {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.07em;
+    color: var(--brass);
+    font-weight: 600;
+}
+.atelier-bridge-text strong {
+    font-size: 0.88rem;
+    color: var(--ink);
+}
+.atelier-bridge-text p {
+    font-size: 0.76rem;
+    line-height: 1.42;
+    color: var(--ink-soft);
+}
+.bridge-link-btn {
+    align-self: flex-start;
+    margin-top: 2px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--crimson);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Dedicated Card Color Switcher Bar attached directly to the Calling Card */
+.card-finish-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--cotton-bg);
+    border: 1px solid var(--rule-strong);
+    border-bottom: none;
+    padding: 8px 14px;
+}
+.card-finish-label {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    font-weight: 500;
+}
+.stock-toggle {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--rule-strong);
+    background: var(--card-bg);
+}
+.stock-opt {
+    border: none;
+    background: transparent;
+    padding: 5px 12px;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease;
+}
+.stock-opt.active {
+    background: var(--ink);
+    color: var(--card-bg);
+    font-weight: 600;
+}
+
+/* 3D Business Card Stage */
+.biz-card-stage {
+    perspective: 1400px;
+}
+.biz-card-tilt {
+    transform-style: preserve-3d;
+    transition: transform 0.18s ease-out;
+}
+.biz-card-rotator {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.biz-card-rotator.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid var(--rule-strong);
+    box-shadow: 0 14px 32px -12px rgba(26, 22, 21, 0.14);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+}
+.card-face--back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+}
+
+/* Obsidian Foil Card Stock */
+.biz-card-stage.stock-obsidian .card-face {
+    background: #151312;
+    color: #F4ECE1;
+    border-color: rgba(200, 162, 91, 0.45);
+}
+.biz-card-stage.stock-obsidian .biz-card-inner {
+    border-color: rgba(200, 162, 91, 0.25);
+}
+.biz-card-stage.stock-obsidian .studio-meta strong,
+.biz-card-stage.stock-obsidian .cupid-wordmark,
+.biz-card-stage.stock-obsidian .founder-line,
+.biz-card-stage.stock-obsidian .back-item strong,
+.biz-card-stage.stock-obsidian .back-item a {
+    color: #F4ECE1;
+}
+.biz-card-stage.stock-obsidian .studio-meta,
+.biz-card-stage.stock-obsidian .card-lead,
+.biz-card-stage.stock-obsidian .back-item span {
+    color: #B9AC9C;
+}
+.biz-card-stage.stock-obsidian .monogram-stamp {
+    border-color: rgba(200, 162, 91, 0.5);
+    color: #C8A25B;
+    background: rgba(200, 162, 91, 0.08);
+}
+.biz-card-stage.stock-obsidian .btn-outline {
+    background: rgba(255, 255, 255, 0.05);
+    color: #F4ECE1;
+    border-color: rgba(200, 162, 91, 0.4);
+}
+
+.card-sheen {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgba(200, 162, 91, 0.14), transparent 60%);
+}
+
+.corner-mark {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-color: var(--brass);
+    opacity: 0.55;
+    pointer-events: none;
+}
+.cm-tl { top: 8px; left: 8px; border-top: 1px solid; border-left: 1px solid; }
+.cm-tr { top: 8px; right: 8px; border-top: 1px solid; border-right: 1px solid; }
+.cm-bl { bottom: 8px; left: 8px; border-bottom: 1px solid; border-left: 1px solid; }
+.cm-br { bottom: 8px; right: 8px; border-bottom: 1px solid; border-right: 1px solid; }
+
+.biz-card-inner {
+    margin: 10px;
+    padding: 22px 22px;
+    border: 1px solid var(--rule);
+    min-height: 416px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-face-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+}
+.card-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+.monogram-stamp {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--crimson);
+    background: var(--crimson-tint);
+    color: var(--crimson);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.monogram-stamp svg {
+    width: 22px;
+    height: 22px;
+}
+.studio-meta {
+    font-family: var(--mono);
+    font-size: 0.63rem;
+    line-height: 1.38;
+    color: var(--ink-soft);
+    min-width: 0;
+}
+.studio-meta strong {
+    display: block;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+}
+
+/* Tactile Rectangular Flip Button (Locked to top-right on both desktop and mobile) */
+.flip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    background: var(--cotton-bg);
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    font-family: var(--mono);
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 2.5px 2.5px 0 var(--ink);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+.flip-btn:hover {
+    background: var(--ink);
+    color: var(--card-bg);
+    transform: translate(-1px, -1px);
+    box-shadow: 3.5px 3.5px 0 var(--brass);
+}
+.flip-btn:active {
+    transform: translate(1.5px, 1.5px);
+    box-shadow: 1px 1px 0 var(--ink);
+}
+.biz-card-stage.stock-obsidian .flip-btn {
+    background: rgba(200, 162, 91, 0.14);
+    color: #F4ECE1;
+    border-color: #C8A25B;
+    box-shadow: 2.5px 2.5px 0 rgba(200, 162, 91, 0.65);
+}
+.biz-card-stage.stock-obsidian .flip-btn:hover {
+    background: #C8A25B;
+    color: #151312;
+}
+
+.card-face-center {
+    padding: 24px 0;
+}
+.cupid-wordmark {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 10px;
+}
+.cupid-wordmark span {
+    color: var(--crimson);
+}
+.card-lead {
+    font-family: var(--serif);
+    font-size: 1.14rem;
+    line-height: 1.44;
+    color: var(--ink-soft);
+}
+.card-lead em {
+    color: var(--ink);
+}
+
+.card-face-footer {
+    padding-top: 12px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.founder-line {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+.founder-line span {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--brass);
+    font-weight: 500;
+}
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.card-actions .btn {
+    padding: 8px 13px;
+    font-size: 0.78rem;
+}
+
+/* Back Face Directory & QR */
+.back-body {
+    display: grid;
+    grid-template-columns: 1fr 116px;
+    gap: 14px;
+    align-items: center;
+    padding: 10px 0;
+}
+.back-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+}
+.back-item--wide {
+    grid-column: 1 / -1;
+}
+.back-item span {
+    display: block;
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+}
+.back-item strong,
+.back-item a {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    word-break: break-word;
+}
+.back-email-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.back-item a:hover {
+    color: var(--crimson);
+    text-decoration: underline;
+}
+
+.qr-panel {
+    background: #FFFDF9;
+    border: 1px solid var(--rule-strong);
+    padding: 8px;
+    text-align: center;
+}
+.qr-panel svg,
+.qr-panel img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.qr-caption {
+    margin-top: 4px;
+    font-family: var(--mono);
+    font-size: 0.56rem;
+    color: #554B43;
+    line-height: 1.25;
+}
+.qr-caption strong {
+    display: block;
+    color: #82172E;
+}

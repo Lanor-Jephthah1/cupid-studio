@@ -1,4 +1,7 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
   "headers": [
     {
       "source": "/cupid.vcf",
@@ -9,7 +12,7 @@
         },
         {
           "key": "Content-Disposition",
-          "value": "inline; filename=\"CupidStudio-McLanorJeff.vcf\""
+          "value": "inline; filename=\"CupidStudio-TheCupidDevs.vcf\""
         }
       ]
     }

@@ -1,0 +1,569 @@
+/* ==========================================================================
+   GRAIN CANVAS, USER-SELECT & RESPONSIVE BREAKPOINTS (DESKTOP, TABLET & PHONE)
+   ========================================================================== */
+
+/* Scroll-reactive fine-grain particle canvas (promoted to dedicated GPU layer) */
+#scrollGrainCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Non-highlightable text across all browsers */
+html, body, body *:not(input):not(textarea):not(select) {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (13" LAPTOPS, TABLETS, PHONES & SMALL PHONES)
+   ========================================================================== */
+
+/* 13-inch & 14-inch Laptops (1024px - 1220px) */
+@media (max-width: 1220px) {
+    .hero-grid {
+        grid-template-columns: 1.02fr 0.98fr;
+        gap: 28px;
+    }
+    .repertoire-grid,
+    .pricing-columns {
+        gap: 16px;
+    }
+    .occ-panel {
+        grid-template-columns: 1fr 370px;
+        gap: 24px;
+        padding: 28px 24px;
+    }
+}
+
+/* Tablets & Small Laptops (<= 980px) */
+@media (max-width: 980px) {
+    .hero-grid,
+    .editorial-manifesto-grid,
+    .repertoire-header-grid,
+    .showcase-head,
+    .pricing-intro-grid,
+    .delivery-editorial-stage {
+        grid-template-columns: 1fr;
+    }
+    .hero-atelier {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    /* Keep Pricing Columns in natural order (Package 01 -> Package 02 -> Package 03) on phones & tablets */
+    .repertoire-grid,
+    .pricing-columns,
+    .tenets-editorial-grid,
+    .process-editorial-grid {
+        grid-template-columns: 1fr;
+    }
+    .delivery-console-panel {
+        border-left: none;
+        border-top: 1px solid var(--rule-strong);
+    }
+}
+
+/* Tablets & Large Phones (<= 840px) */
+@media (max-width: 840px) {
+    .occ-panel {
+        grid-template-columns: 1fr;
+        padding: 20px 16px;
+    }
+    .phone-stage {
+        order: -1;
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .process-header-grid,
+    .occasions-header,
+    .extras-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-origin {
+        display: none;
+    }
+}
+
+/* Phones (<= 640px) — Standard, Balanced, Non-Stretched Proportions */
+@media (max-width: 640px) {
+    body {
+        padding: 0;
+    }
+    .studio-nav {
+        padding: 9px 14px;
+        margin-bottom: 10px;
+    }
+    .page-wrap {
+        padding: 0 14px;
+    }
+    .nav-links {
+        gap: 12px;
+    }
+    .nav-links a {
+        font-size: 0.65rem;
+    }
+    .nav-commission-btn {
+        padding: 6px 11px;
+        font-size: 0.68rem;
+    }
+
+    /* Compact section spacing on phones so the page never feels stretched */
+    .hero-section {
+        padding: 12px 0 32px;
+    }
+    .section-block {
+        padding: 36px 0;
+    }
+    .section-kicker-bar {
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        gap: 8px;
+    }
+    .kicker-meta {
+        font-size: 0.6rem;
+    }
+
+    .hero-headline {
+        font-size: clamp(1.95rem, 7vw, 2.45rem);
+        margin-bottom: 12px;
+    }
+    .hero-lead {
+        font-size: 0.96rem;
+        margin-bottom: 16px;
+    }
+    .hero-narrative-box {
+        padding: 14px 16px;
+        margin-bottom: 16px;
+    }
+    .hero-narrative-box p {
+        font-size: 0.88rem;
+        margin-bottom: 12px;
+    }
+    .hero-occasion-pills {
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+    .hero-occ-pill {
+        padding: 4px 9px;
+        font-size: 0.6rem;
+    }
+
+    /* Keep Hero Meta Strip in 3 compact columns horizontally on mobile */
+    .hero-meta-strip {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding-top: 10px;
+    }
+    .hero-meta-item .meta-label {
+        font-size: 0.54rem;
+    }
+    .hero-meta-item strong {
+        font-size: 0.74rem;
+    }
+
+    /* Compact horizontal button row on mobile */
+    .hero-actions-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+    .hero-actions-row > :first-child {
+        grid-column: 1 / -1;
+    }
+    .hero-actions-row .btn {
+        width: 100%;
+        padding: 10px 14px;
+    }
+
+    /* Keep Gift Box Bridge Card compact & horizontal on mobile */
+    .atelier-tableau {
+        padding: 12px;
+    }
+    .atelier-slate-bar {
+        font-size: 0.58rem;
+        padding-bottom: 8px;
+        margin-bottom: 10px;
+    }
+    .atelier-bridge-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .atelier-thumb-wrap {
+        width: 72px;
+        height: 68px;
+    }
+    .atelier-bridge-text strong {
+        font-size: 0.8rem;
+    }
+    .atelier-bridge-text p {
+        font-size: 0.72rem;
+        line-height: 1.35;
+    }
+
+    /* Card Finish Toolbar stays on one clean horizontal line right above the card */
+    .card-finish-toolbar {
+        padding: 7px 10px;
+        flex-wrap: nowrap;
+    }
+    .card-finish-label {
+        font-size: 0.6rem;
+    }
+    .stock-opt {
+        padding: 5px 9px;
+        font-size: 0.6rem;
+    }
+
+    /* 3D Calling Card on Mobile — Exact same top-right Contact & QR button & 1-row footer buttons as desktop */
+    .biz-card-inner {
+        margin: 8px;
+        padding: 15px 14px;
+        min-height: 372px;
+    }
+    .card-face-header {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        padding-bottom: 10px;
+    }
+    .monogram-stamp {
+        width: 34px;
+        height: 34px;
+    }
+    .monogram-stamp svg {
+        width: 19px;
+        height: 19px;
+    }
+    .studio-meta {
+        font-size: 0.58rem;
+    }
+    .flip-btn {
+        padding: 6px 10px;
+        font-size: 0.62rem;
+        margin-left: auto;
+    }
+    .card-face-center {
+        padding: 14px 0;
+    }
+    .cupid-wordmark {
+        font-size: 2.85rem;
+    }
+    .card-lead {
+        font-size: 1rem;
+    }
+    .card-actions {
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+    .card-actions .btn {
+        flex: 1;
+        padding: 8px 8px;
+        font-size: 0.72rem;
+        white-space: nowrap;
+    }
+    .back-body {
+        grid-template-columns: 1fr 90px;
+        gap: 8px;
+        padding: 6px 0;
+    }
+    .back-grid {
+        gap: 5px 8px;
+    }
+    .back-item span {
+        font-size: 0.52rem;
+    }
+    .back-item strong,
+    .back-item a {
+        font-size: 0.68rem;
+    }
+
+    /* Compact Section Cards on Mobile */
+    .tenet-card,
+    .repertoire-card,
+    .process-step-card {
+        padding: 18px 16px;
+    }
+
+    /* 2x2 Grid for Occasion Tabs on Mobile */
+    .tab-strip {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        overflow: visible;
+    }
+    .occ-tab {
+        border: 1px solid var(--rule-strong);
+        padding: 9px 10px;
+        font-size: 0.74rem;
+        justify-content: flex-start;
+    }
+    .occ-tab.active {
+        border-color: var(--crimson);
+        background: var(--card-bg);
+    }
+
+    /* Responsive 12s Delivery Video & QR Code Scan on Mobile Phones */
+    .unboxing-card {
+        padding: 8px;
+    }
+    .unboxing-stage {
+        aspect-ratio: 4 / 3.15;
+        min-height: 276px;
+    }
+    .ub-beat-head {
+        padding: 7px 10px;
+        font-size: 0.52rem;
+    }
+    .ub-beat-caption {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        padding: 8px 10px;
+    }
+    .ub-beat-caption span {
+        font-size: 0.52rem;
+    }
+    .ub-beat-caption p {
+        font-size: 0.84rem;
+    }
+    .ub-scan-stage {
+        top: 32px;
+        left: 8px;
+        right: 8px;
+        bottom: 62px;
+        gap: 8px;
+    }
+    .ub-scan-tag {
+        width: 104px;
+        padding: 7px 8px;
+        gap: 4px;
+    }
+    .ub-scan-qr {
+        width: 68px;
+        height: 68px;
+    }
+    .ub-tag-label {
+        font-size: 0.46rem;
+    }
+    .ub-gate-chip {
+        padding: 9px 10px;
+    }
+    .ub-chip-kicker {
+        font-size: 0.48rem;
+    }
+    .ub-gate-chip strong {
+        font-size: 0.68rem;
+    }
+    .ub-pin-dots {
+        gap: 4px;
+        margin: 6px 0 4px;
+    }
+    .ub-pin-dots span {
+        width: 20px;
+        height: 22px;
+        font-size: 0.64rem;
+    }
+    .ub-chip-status {
+        font-size: 0.48rem;
+    }
+    .ub-noc-frame {
+        top: 32px;
+        left: 8px;
+        right: 8px;
+        bottom: 62px;
+        gap: 8px;
+    }
+    .ub-vinyl-card {
+        padding: 8px;
+    }
+    .ub-disc {
+        width: 58px;
+        height: 58px;
+    }
+    .ub-disc-core {
+        width: 18px;
+        height: 18px;
+    }
+    .ub-vinyl-meta strong {
+        font-size: 0.72rem;
+    }
+    .ub-pol img {
+        height: 64px;
+    }
+    .ub-letter-card {
+        padding: 12px 14px;
+    }
+    .ub-letter-quote {
+        font-size: 0.84rem;
+    }
+    .delivery-console-panel {
+        padding: 18px 16px;
+        gap: 14px;
+    }
+    .ub-beat-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .extras-grid {
+        grid-template-columns: 1fr;
+    }
+    /* Keep Booking Modal fields in a compact 2-column grid on phones so it never feels vertically stretched */
+    .booking-fields-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-bottom: 12px;
+    }
+    .modal-card--brief {
+        padding: 18px 16px 16px;
+    }
+    .modal-card--brief h3 {
+        font-size: 1.32rem;
+    }
+    .modal-card--brief .sub {
+        font-size: 0.78rem;
+        margin-bottom: 10px;
+    }
+    .modal-estimate-strip {
+        padding: 8px 10px;
+        margin-bottom: 10px;
+    }
+    .field label {
+        font-size: 0.58rem;
+    }
+    .field input,
+    .field textarea,
+    .cupid-select-trigger {
+        padding: 7px 9px;
+        font-size: 0.8rem;
+    }
+    .field textarea {
+        min-height: 60px;
+    }
+    .modal-card--policy {
+        max-width: 344px;
+        width: calc(100% - 28px);
+        margin: 0 auto;
+        padding: 15px 14px 13px;
+    }
+    .modal-card--policy h3 {
+        font-size: 1.25rem;
+        margin-bottom: 3px;
+    }
+    .modal-card--policy .sub {
+        font-size: 0.74rem;
+        margin-bottom: 9px;
+    }
+    .policy-tabs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+        padding: 4px;
+        margin-bottom: 9px;
+    }
+    .policy-tab {
+        padding: 6px 4px;
+        font-size: 0.56rem;
+    }
+    .policy-body {
+        max-height: 205px;
+        padding: 10px 12px;
+        margin-bottom: 10px;
+    }
+    .policy-body h4 {
+        font-size: 0.92rem;
+    }
+    .policy-body p,
+    .policy-body li {
+        font-size: 0.76rem;
+        line-height: 1.48;
+    }
+    .policy-footer-bar {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 8px;
+        padding-top: 8px;
+    }
+    .policy-footer-bar .btn {
+        width: 100%;
+    }
+    .estimate-bar,
+    .final-cta-banner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px 18px;
+    }
+    .final-cta-actions {
+        flex-direction: column;
+    }
+    .final-cta-actions .btn {
+        width: 100%;
+    }
+    #process.section-block {
+        padding-bottom: 18px;
+    }
+    .colophon {
+        padding: 16px 0 18px;
+        gap: 12px;
+    }
+    .colophon-top {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    .colophon-brand {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+    .colophon-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        width: 100%;
+    }
+    .colophon-dot {
+        display: none;
+    }
+    .colophon-link-btn,
+    .colophon-ext-link {
+        background: var(--cotton-bg);
+        border: 1px solid var(--rule-strong);
+        padding: 8px 10px;
+        text-align: center;
+        font-size: 0.6rem;
+        border-radius: 2px;
+        width: 100%;
+        display: block;
+    }
+    .colophon-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        font-size: 0.6rem;
+        line-height: 1.45;
+    }
+}
+
+/* Compact Phones (<= 390px) */
+@media (max-width: 390px) {
+    .biz-card-inner {
+        min-height: 410px;
+    }
+    .back-body {
+        grid-template-columns: 1fr 82px;
+        gap: 8px;
+    }
+}

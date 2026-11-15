@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Devs;The Cupid;;;
+FN:Cupid Studio — The Cupid Devs (#thecupiddevs)
+NICKNAME:#thecupiddevs
+ORG:Cupid Studio
+TITLE:The Cupid Devs (#thecupiddevs)
+EMAIL;TYPE=INTERNET,WORK:hello.cupidstudio@gmail.com
+URL:https://cupid-studio.vercel.app/
+ADR;TYPE=WORK:;;;;;Ghana
+NOTE:Custom Birthday\, Anniversary\, Valentine & Event Websites — Built from scratch by The Cupid Devs (#thecupiddevs).
+END:VCARD
